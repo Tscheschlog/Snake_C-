@@ -145,7 +145,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Snake.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Apple.h" />
+    <ClInclude Include="GameBoard.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Snake.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\SnakeC++\Snake-Game\Fonts\Menu_Font.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\SnakeC++\Snake-Game\Images\Grass.jpg" />
+    <Image Include="..\..\SnakeC++\Snake-Game\Images\Apple.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,67 +1,63 @@
-﻿  Main.cpp
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(30,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(30,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(39,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(39,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(70,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Menu.cpp
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(33,119): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(33,85): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(37,123): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(37,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(68,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(69,94): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(69,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(70,87): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(70,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(70,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(71,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(71,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(108,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(77,93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(77,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(78,86): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(108,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Menu.cpp(78,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(109,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(109,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(110,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(110,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(112,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(112,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(113,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(113,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(114,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(114,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(124,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(124,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(172,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(172,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\12676\source\repos\SnakeyWakey\SnakeyWakey\Main.cpp(278,20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   SnakeyWakey.vcxproj -> C:\Users\12676\source\repos\SnakeyWakey\Debug\SnakeyWakey.exe
