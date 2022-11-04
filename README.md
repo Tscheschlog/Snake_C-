@@ -5,4 +5,4 @@ This is the readme.md for the game.
 
 Names: Christopher Tscheschlog, [Your Name]
 
-## Purpose
+## Purpose:
