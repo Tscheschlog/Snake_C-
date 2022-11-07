@@ -4,10 +4,10 @@
 Apple::Apple() {
 
     // Generate 0-39 --> x20 --> 0, 20, 40, 60, ..., 780
-    xPos = rand() % 39 * 20;
+    xPos = rand() % 39 * 0;
     yPos = rand() % 39 * 20;
 
-    if (!appleTexture.loadFromFile("C:/Users/12676/source/repos/SnakeC++/Snake-Game/Images/Apple.png")) {
+    if (!appleTexture.loadFromFile("../Images/Apple.png")) {
         std::cout << "UNABLE TO LOAD ASSET";
     }
     else {

@@ -46,7 +46,7 @@ void Menu::Continue(sf::RenderWindow& target) {
 
 void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont, float heightFactor) {
 	sf::Font menuFont;
-	if (!menuFont.loadFromFile("C:/Users/12676/source/repos/SnakeC++/Snake-Game/Fonts/Menu_Font.ttf")) {
+	if (!menuFont.loadFromFile("../Fonts/Menu_Font.ttf")) {
 		std::cout << "UNABLE TO LOAD";
 	}
 
@@ -55,7 +55,7 @@ void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont
 	menuText.setCharacterSize(sizeFont);
 	menuText.setFillColor(sf::Color::Red);
 	menuText.setString(title);
-	menuText.setPosition(target.getSize().x / 2 - menuText.getLocalBounds().width/2, target.getSize().y * heightFactor);
+	menuText.setPosition(target.getSize().x / 2.f - menuText.getLocalBounds().width/2.f, target.getSize().y * heightFactor);
 
 	target.draw(menuText);
 }

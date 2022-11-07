@@ -52,7 +52,7 @@ void SnakeGameBoard::gameDisplay(sf::RenderWindow& Game) {
 }
 
 void SnakeGameBoard::BoardSetUp(sf::RenderWindow& Game) {
-	grassTexture.loadFromFile("C:/Users/12676/source/repos/SnakeC++/Snake-Game/Images/Grass.jpg");
+	grassTexture.loadFromFile("../Images/Grass.jpg");
 	gameBoard.setTexture(grassTexture);
 
 	float sizeX = .75*float(Game.getSize().x) / float(grassTexture.getSize().x);

@@ -52,7 +52,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\..\SnakeC++\Snake-Game\Fonts\Menu_Font.ttf">
+    <Font Include="..\..\..\source\repos\Project1\Snake\Fonts\Menu_Font.ttf">
       <Filter>Fonts</Filter>
     </Font>
   </ItemGroup>
