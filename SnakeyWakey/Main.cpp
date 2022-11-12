@@ -12,9 +12,9 @@ int main() {
     Menu playerMenu;
     if (playerMenu.openGameWindow) {
         if (playerMenu.singlePlayer)
-            SnakeGameBoard SinglePlayerBoard;
+            GameBoard SinglePlayerBoard;
         else
-            SnakeGameBoard MultiplayerBoard;
+            GameBoard MultiplayerBoard;
     }
 
     return 0;

@@ -1,19 +1,20 @@
 #include "Snake.h";
 
 
-void Snake::initSnakeBody() {
+
+void Snake::initSnakeBody(int gameBoardX, int gameBoardY) {
 
         segment head;
         segment body;
         segment tail;
 
-        // Starting Positions
-        head.xPos = 100;
-        head.yPos = 60;
-        body.xPos = 80;
-        body.yPos = 60;
-        tail.xPos = 60;
-        tail.yPos = 60;
+        // Starting Positions of snake always inside Game Board
+        head.xPos = gameBoardX / 2;
+        head.yPos = gameBoardY / 2;
+        body.xPos = gameBoardY / 2;
+        body.yPos = gameBoardY / 2;
+        tail.xPos = gameBoardX / 2;
+        tail.yPos = gameBoardY / 2;
 
         head.shape.setFillColor(sf::Color::Green);
         body.shape.setFillColor(sf::Color::Green);
@@ -34,7 +35,7 @@ void Snake::initSnakeBody() {
 }
 
 
-Snake::Snake() {
+Snake::Snake(int gameBoardX, int gameBoardY) {
         speed = 20;
         res = 20;
         length = 3;
@@ -47,7 +48,7 @@ Snake::Snake() {
         lastPosition[1] = 0;
 
         // Shape and position set
-        initSnakeBody();
+        initSnakeBody(gameBoardX,gameBoardY);
 
 }
 
@@ -67,9 +68,10 @@ void Snake::setLastPostion(int x, int y) {
         }
  }
 
- void Snake::appleEaten() {
+ void Snake::appleEaten(unsigned int &points) {
 
         length++;
+        points++;
 
         segment newSeg;
         newSeg.shape.setFillColor(sf::Color::Green);

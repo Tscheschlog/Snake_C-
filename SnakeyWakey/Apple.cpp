@@ -1,11 +1,13 @@
 #include "Apple.h"
 #include <iostream>
 
-Apple::Apple() {
+Apple::Apple(sf::Sprite Board, int gameBoardX, int gameBoardY) { //Setup Apple(size, texture, initial position...etc)
 
-    // Generate 0-39 --> x20 --> 0, 20, 40, 60, ..., 780
-    xPos = rand() % 39 * 0;
-    yPos = rand() % 39 * 20;
+    // Generate Apple Inside GameBoard
+    do {
+        xPos = rand() % gameBoardX;
+        yPos = rand() % gameBoardY;
+    } while (!Board.getGlobalBounds().contains(xPos, yPos));
 
     if (!appleTexture.loadFromFile("../Images/Apple.png")) {
         std::cout << "UNABLE TO LOAD ASSET";
@@ -15,20 +17,23 @@ Apple::Apple() {
     }
     appleSprite.setTexture(appleTexture);
 
-    float sizeX = 20 / float(appleTexture.getSize().x);
-    float sizeY = 20 / float(appleTexture.getSize().y);
+    float sizeX = 40 / float(appleTexture.getSize().x);
+    float sizeY = 40 / float(appleTexture.getSize().y);
 
     appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));
     appleSprite.setPosition(xPos, yPos);
 }
 
-void Apple::newApple() {
+void Apple::newApple(sf::Sprite Board, int gameBoardX, int gameBoardY) {
 
     // Refer to constructor
-    xPos = rand() % 10 * 20;
-    yPos = rand() % 10 * 20;
+    do {
+        xPos = rand() % gameBoardX;
+        yPos = rand() % gameBoardY;
+    } while (!Board.getGlobalBounds().contains(xPos, yPos));
     appleSprite.setPosition(xPos, yPos);
 }
+
 
 void Apple::render(sf::RenderWindow& window) {
 
