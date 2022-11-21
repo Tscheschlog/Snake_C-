@@ -7,14 +7,12 @@
 
 
 
-
-
 int main() {
 
     // Declare a new music
     sf::Music music;
     // Open it from an audio file
-    if (!music.openFromFile("Music/music.ogg"))
+    if (!music.openFromFile("../Music/music.ogg"))
     {
         // error...
         std::cout << "MUSIC FAILED!\n";
@@ -22,11 +20,10 @@ int main() {
     // Change some parameters
     music.setPosition(0, 1, 10); // change its 3D position
     music.setPitch(2);           // increase the pitch
-    music.setVolume(50);         // reduce the volume
+    music.setVolume(15);         // reduce the volume
     music.setLoop(true);         // make it loop
     // Play it
     music.play();
-
 
     std::srand(time(0));
 
