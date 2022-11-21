@@ -6,22 +6,24 @@
 #include "Apple.h"
 
 
-class SnakeGameBoard
+class GameBoard
 {
 private:
 	sf::RenderWindow* gameWindow;
 	sf::Sprite gameBoard;
 	sf::Texture grassTexture;
+	sf::Font pointsFont;
+	sf::Text pointsText;
 	Snake* snake;
 	Apple* apple;
-	unsigned int gameBoardWidth, gameBoardHeight;
+	unsigned int gameBoardWidth, gameBoardHeight, points;
 public:
-	SnakeGameBoard();
+	GameBoard();
 	void gameDisplay(sf::RenderWindow& Game);
+	void foundApple(Apple& apple, Snake& snake);
+	void PointSetUp();
 	void BoardSetUp(sf::RenderWindow& Game);
-	void AppleSetUp();
 	void drawBoard(sf::RenderWindow& Game);
-	void getAppleSpawn();
 };
 
 

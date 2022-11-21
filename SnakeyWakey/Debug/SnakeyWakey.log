@@ -1,5 +1,1 @@
-﻿  Main.cpp
-C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(29,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(29,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\Main.cpp(31,20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  SnakeyWakey.vcxproj -> C:\programming2final\Snake_C-\Debug\SnakeyWakey.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(439,5): error MSB8020: The build tools for v143 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install v143 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".

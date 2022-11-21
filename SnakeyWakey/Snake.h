@@ -6,13 +6,16 @@
 #include <random>
 #include "Snake.h"
 
+
+class GameBoard;
+
 struct segment {
     sf::RectangleShape shape;
     int xPos;
     int yPos;
 };
 
-class Snake {
+class Snake  {
 
 private:
     int speed;
@@ -22,7 +25,7 @@ private:
     std::array<int, 2> lastPosition;
     std::vector<segment> body{};
 
-    void initSnakeBody();
+    void initSnakeBody(int gameBoardX, int gameBoardY);
 
     void updateShapePosition(segment& seg) {
 
@@ -31,7 +34,7 @@ private:
     }
 
 public:
-    Snake();
+    Snake(int gameBoardX, int gameBoardY);
 
     segment getHeadPos() {
         return body[0];
@@ -41,7 +44,7 @@ public:
 
     void render(sf::RenderWindow&);
 
-    void appleEaten();
+    void appleEaten(unsigned int &points);
 
     void updateSnakeTrail();
 

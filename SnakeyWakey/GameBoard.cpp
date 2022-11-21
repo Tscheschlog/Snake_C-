@@ -8,31 +8,33 @@
 #include <time.h>  
 
 
-SnakeGameBoard::SnakeGameBoard() {
+GameBoard::GameBoard() {
 	gameWindow = new sf::RenderWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
 	gameWindow->setFramerateLimit(12);
 
 	BoardSetUp(*gameWindow);
 
-	snake = new Snake();
-	apple = new Apple();
-
 	gameBoardWidth = gameBoard.getGlobalBounds().width;
 	gameBoardHeight = gameBoard.getGlobalBounds().height;
+	points = 0;
+
+	snake = new Snake(gameBoardWidth,gameBoardHeight);
+	apple = new Apple(gameBoard, gameBoardWidth, gameBoardHeight);
+	
 
 	gameDisplay(*gameWindow);
 }
 
-void foundApple(Apple& apple,Snake& snake) {
+void GameBoard::foundApple(Apple& apple,Snake& snake) {
 
-    if (apple.xPos == snake.getHeadPos().xPos && apple.yPos == snake.getHeadPos().yPos) {
-        apple.newApple();
-        snake.appleEaten();
+    if (apple.appleSprite.getGlobalBounds().contains(snake.getHeadPos().xPos,snake.getHeadPos().yPos)) { //Checks if snake head is in the bounds of the Apple
+        apple.newApple(gameBoard,gameBoardWidth,gameBoardHeight);
+        snake.appleEaten(points);
     }
 
 }
 
-void SnakeGameBoard::gameDisplay(sf::RenderWindow& Game) {
+void GameBoard::gameDisplay(sf::RenderWindow& Game) {
 
 
 	while (Game.isOpen()) {
@@ -51,8 +53,8 @@ void SnakeGameBoard::gameDisplay(sf::RenderWindow& Game) {
 	}
 }
 
-void SnakeGameBoard::BoardSetUp(sf::RenderWindow& Game) {
-	grassTexture.loadFromFile("C:/Users/12676/source/repos/SnakeC++/Snake-Game/Images/Grass.jpg");
+void GameBoard::BoardSetUp(sf::RenderWindow& Game) {
+	grassTexture.loadFromFile("../Images/Grass.jpg");
 	gameBoard.setTexture(grassTexture);
 
 	float sizeX = .75*float(Game.getSize().x) / float(grassTexture.getSize().x);
@@ -62,10 +64,23 @@ void SnakeGameBoard::BoardSetUp(sf::RenderWindow& Game) {
 	gameBoard.setPosition(Game.getSize().x / 8.f, Game.getSize().y / 8.f);
 }
 
+void GameBoard::PointSetUp() { //Setup Points(font,position,color...etc)
+	pointsFont.loadFromFile("../Fonts/Points_Font.ttf");
+	pointsText.setFont(pointsFont);
+	pointsText.setFillColor(sf::Color::Red);
+	pointsText.setCharacterSize(100);
+	pointsText.setString("Points " + std::to_string(points));
+	pointsText.setPosition(0, 0);
+}
 
-void SnakeGameBoard::drawBoard(sf::RenderWindow& Game) {
+
+
+
+void GameBoard::drawBoard(sf::RenderWindow& Game) {
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
+	PointSetUp();
+	Game.draw(pointsText);
 
 	apple->render(Game);
 
