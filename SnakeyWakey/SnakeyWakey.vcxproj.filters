@@ -19,6 +19,9 @@
     <Filter Include="Images">
       <UniqueIdentifier>{2b8df9f8-01e5-4ecd-9a3d-7c799408e81d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Music">
+      <UniqueIdentifier>{e933251f-5fd9-4565-bfe1-078fdc882be9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -63,5 +66,10 @@
     <Image Include="..\..\SnakeC++\Snake-Game\Images\Grass.jpg">
       <Filter>Images</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Users\12676\Downloads\music.ogg">
+      <Filter>Music</Filter>
+    </None>
   </ItemGroup>
 </Project>
