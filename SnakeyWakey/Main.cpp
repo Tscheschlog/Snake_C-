@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Audio/Music.hpp>
+#include "SoundFX.h"
 #include "Snake.h"
 #include "Apple.h"
 #include "Menu.h"
@@ -8,26 +9,17 @@
 
 
 int main() {
+    
+    sf::SoundBuffer buff;
+    buff.loadFromFile("../Music/music.ogg");
 
-    // Declare a new music
-    sf::Music music;
-    // Open it from an audio file
-    if (!music.openFromFile("../Music/music.ogg"))
-    {
-        // error...
-        std::cout << "MUSIC FAILED!\n";
-    }
-    // Change some parameters
-    music.setPosition(0, 1, 10); // change its 3D position
-    music.setPitch(2);           // increase the pitch
-    music.setVolume(15);         // reduce the volume
-    music.setLoop(true);         // make it loop
-    // Play it
-    music.play();
 
+    // Create the main menu
+    Menu playerMenu;
+
+    // Set the random time for apple spawns
     std::srand(time(0));
 
-    Menu playerMenu;
     if (playerMenu.openGameWindow) {
         if (playerMenu.singlePlayer)
             GameBoard SinglePlayerBoard;

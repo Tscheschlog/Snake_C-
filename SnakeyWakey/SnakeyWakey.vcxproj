@@ -150,12 +150,14 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SoundFX.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="SoundFX.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="..\..\..\source\repos\Project1\Snake\Fonts\Menu_Font.ttf" />
@@ -165,7 +167,12 @@
     <Image Include="..\..\SnakeC++\Snake-Game\Images\Apple.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\Users\12676\Downloads\button.ogg" />
     <None Include="..\..\..\Users\12676\Downloads\music.ogg" />
+    <None Include="..\..\..\Users\12676\Downloads\ping.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Users\12676\Downloads\button.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

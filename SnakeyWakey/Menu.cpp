@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "SoundFX.h"
 #include <string>
 #include <iostream>
 #include "SFML\Graphics.hpp"
@@ -11,8 +12,22 @@ Menu::Menu() { //Setup Menu window
 	Continue(menuWindow);
 }
 
+void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
+
+	if (Rect.getGlobalBounds().contains(sf::Mouse::getPosition(target).x, sf::Mouse::getPosition(target).y)) {
+		std::cout << "MOUSEOVER BTN\n";
+		Rect.setFillColor(sf::Color::White);
+	}
+	else {
+		Rect.setFillColor(sf::Color::Transparent);
+	}
+
+}
+
 void Menu::Continue(sf::RenderWindow& target) {
+	sound.playMusic("../Music/music.ogg");
 	while (target.isOpen()) {
+
 		sf::Event eventMenu;
 		while (target.pollEvent(eventMenu)) {
 			if (eventMenu.type == sf::Event::Closed) {
@@ -46,6 +61,9 @@ void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont
 	}
 	sf::Text menuText;
 	menuText.setFont(menuFont);
+	menuText.setLetterSpacing(1);
+	menuText.setOutlineColor(sf::Color::White);
+	menuText.setOutlineThickness(1);
 	menuText.setCharacterSize(sizeFont);
 	menuText.setFillColor(sf::Color::Red);
 	menuText.setString(title);
@@ -55,7 +73,7 @@ void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont
 }
 
 void Menu::MenuButtonSetup(sf::RectangleShape &Rect, sf::RenderWindow &target, sf::Vector2f position) { //Setup Buttons Setting(Color,Position,Size..etc)
-	Rect.setFillColor(sf::Color::Transparent);
+	highlightButton(Rect, target);
 	Rect.setSize(sf::Vector2f(target.getSize().x * .40, target.getSize().y * .15));
 	Rect.setOutlineThickness(2);
 	Rect.setOutlineColor(sf::Color::Red);
@@ -66,14 +84,13 @@ void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, Buttons
 	target.clear(sf::Color::Black);
 	drawTextMenu(target, "SNAKE", 250, 0);
 
-
-	drawTextMenu(target, "SINGLE", 125, 7.0/12.0);
 	MenuButtonSetup(buttonSinglePlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 7.10 / 12.0));
 	target.draw(buttonSinglePlayer);
+	drawTextMenu(target, "SINGLE", 125, 7.0 / 12.0);
 
-	drawTextMenu(target, "MULTIPLAYER", 125, 9.0 / 12.0);
-	MenuButtonSetup(buttonMultiPlayer,target,sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0));
+	MenuButtonSetup(buttonMultiPlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0));
 	target.draw(buttonMultiPlayer);
+	drawTextMenu(target, "MULTIPLAYER", 125, 9.0 / 12.0);
 
 	target.display();
 }

@@ -39,6 +39,9 @@
     <ClCompile Include="GameBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SoundFX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Snake.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundFX.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,5 +77,16 @@
     <None Include="..\..\..\Users\12676\Downloads\music.ogg">
       <Filter>Music</Filter>
     </None>
+    <None Include="..\..\..\Users\12676\Downloads\button.ogg">
+      <Filter>Music</Filter>
+    </None>
+    <None Include="..\..\..\Users\12676\Downloads\ping.ogg">
+      <Filter>Music</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Users\12676\Downloads\button.wav">
+      <Filter>Music</Filter>
+    </Media>
   </ItemGroup>
 </Project>
