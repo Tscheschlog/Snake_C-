@@ -25,7 +25,7 @@ private:
     std::array<int, 2> lastPosition;
     std::vector<segment> body{};
 
-    void initSnakeBody(int gameBoardX, int gameBoardY);
+    void initSnakeBody(sf::Sprite, float gameBoardX, float gameBoardY);
 
     void updateShapePosition(segment& seg) {
 
@@ -34,7 +34,7 @@ private:
     }
 
 public:
-    Snake(int gameBoardX, int gameBoardY);
+    Snake(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
     segment getHeadPos() {
         return body[0];
@@ -44,7 +44,7 @@ public:
 
     void render(sf::RenderWindow&);
 
-    void appleEaten(unsigned int &points);
+    void appleEaten(int &points);
 
     void updateSnakeTrail();
 

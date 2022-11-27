@@ -15,7 +15,6 @@ Menu::Menu() { //Setup Menu window
 void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
 
 	if (Rect.getGlobalBounds().contains(sf::Mouse::getPosition(target).x, sf::Mouse::getPosition(target).y)) {
-		std::cout << "MOUSEOVER BTN\n";
 		Rect.setFillColor(sf::Color::White);
 	}
 	else {
@@ -91,6 +90,7 @@ void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, Buttons
 	MenuButtonSetup(buttonMultiPlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0));
 	target.draw(buttonMultiPlayer);
 	drawTextMenu(target, "MULTIPLAYER", 125, 9.0 / 12.0);
+
 
 	target.display();
 }

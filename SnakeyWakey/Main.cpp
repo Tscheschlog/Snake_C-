@@ -9,10 +9,6 @@
 
 
 int main() {
-    
-    sf::SoundBuffer buff;
-    buff.loadFromFile("../Music/music.ogg");
-
 
     // Create the main menu
     Menu playerMenu;

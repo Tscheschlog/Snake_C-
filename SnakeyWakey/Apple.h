@@ -11,15 +11,14 @@ class Apple {
 private:
     sf::Texture appleTexture;
 
-
 public:
     sf::Sprite appleSprite;
     int xPos;
     int yPos;
 
-    Apple(sf::Sprite Board, int gameBoardX, int gameBoardY);
+    Apple(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
-    void newApple(sf::Sprite Board, int gameBoardX, int gameBoardY);
+    void newApple(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
     void render(sf::RenderWindow&);
 

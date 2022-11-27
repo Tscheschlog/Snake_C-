@@ -2,19 +2,19 @@
 
 
 
-void Snake::initSnakeBody(int gameBoardX, int gameBoardY) {
+void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) {
 
         segment head;
         segment body;
         segment tail;
 
         // Starting Positions of snake always inside Game Board
-        head.xPos = gameBoardX / 2;
-        head.yPos = gameBoardY / 2;
-        body.xPos = gameBoardY / 2;
-        body.yPos = gameBoardY / 2;
-        tail.xPos = gameBoardX / 2;
-        tail.yPos = gameBoardY / 2;
+        head.xPos = board.getGlobalBounds().left + gameBoardX / 2;
+        head.yPos = board.getGlobalBounds().top + gameBoardY / 2;
+        body.xPos = board.getGlobalBounds().left + gameBoardX / 2 - 20;
+        body.yPos = board.getGlobalBounds().top + gameBoardY / 2;
+        tail.xPos = board.getGlobalBounds().left + gameBoardX / 2 - 20 - 20;
+        tail.yPos = board.getGlobalBounds().top + gameBoardY / 2;
 
         head.shape.setFillColor(sf::Color::Green);
         body.shape.setFillColor(sf::Color::Green);
@@ -35,20 +35,22 @@ void Snake::initSnakeBody(int gameBoardX, int gameBoardY) {
 }
 
 
-Snake::Snake(int gameBoardX, int gameBoardY) {
-        speed = 20;
-        res = 20;
+Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY) {
+        
+    
+        speed = gameBoardX / 60;
+        res = gameBoardX / 60;
         length = 3;
 
         // Right to start off
         lastDirection = 2;
 
         // These are changed every frame so what they are initialized to does not matter
-        lastPosition[0] = 0;
-        lastPosition[1] = 0;
+        lastPosition[0] = gameBoardX;
+        lastPosition[1] = gameBoardY;
 
         // Shape and position set
-        initSnakeBody(gameBoardX,gameBoardY);
+        initSnakeBody(board, gameBoardX, gameBoardY);
 
 }
 
@@ -62,13 +64,12 @@ void Snake::setLastPostion(int x, int y) {
 
         for (auto item : body) {
 
-            //std::cout << item.xPos << " " << item.yPos << "\n";
             window.draw(item.shape);
 
         }
  }
 
- void Snake::appleEaten(unsigned int &points) {
+ void Snake::appleEaten(int &points) {
 
         length++;
         points++;
@@ -140,19 +141,19 @@ void Snake::updateSnakeTrail() {
      int last = getLastDirection();
 
              if (event.key.code == sf::Keyboard::Up) {
-                 if (last == 3)return;
+                 if (last == 3) return;
                     setLastDirection(1);
              }
-             else if (event.key.code == sf::Keyboard::Down) {
-                 if (last == 1)return;
+             if (event.key.code == sf::Keyboard::Down) {
+                 if (last == 1) return;
                     setLastDirection(3);
              }
-            else if (event.key.code == sf::Keyboard::Left) {
-                 if (last == 2)return;
+             if (event.key.code == sf::Keyboard::Left) {
+                 if (last == 2) return;
                     setLastDirection(4);
              }
-             else if (event.key.code == sf::Keyboard::Right) {
-                 if (last == 4)return;
+             if (event.key.code == sf::Keyboard::Right) {
+                 if (last == 4) return;
                     setLastDirection(2);
              }
  }

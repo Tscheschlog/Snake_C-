@@ -1,5 +1,16 @@
-﻿  Main.cpp
+﻿  GameBoard.cpp
 C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(32,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(32,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\Main.cpp(21,20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(31,96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(31,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(102,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(103,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   SnakeyWakey.vcxproj -> C:\programming2final\Snake_C-\Debug\SnakeyWakey.exe

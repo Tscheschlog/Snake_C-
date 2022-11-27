@@ -16,7 +16,9 @@ private:
 	sf::Text pointsText;
 	Snake* snake;
 	Apple* apple;
-	unsigned int gameBoardWidth, gameBoardHeight, points;
+	float gameBoardWidth, gameBoardHeight;
+	int points;
+	void startCountDown(sf::RenderWindow& Game);
 public:
 	GameBoard();
 	void gameDisplay(sf::RenderWindow& Game);

@@ -5,6 +5,7 @@
 #include "SFML\Window.hpp"
 #include "SFML\System.hpp"
 #include <stdlib.h> 
+#include<windows.h>
 #include <time.h>  
 
 
@@ -18,7 +19,7 @@ GameBoard::GameBoard() {
 	gameBoardHeight = gameBoard.getGlobalBounds().height;
 	points = 0;
 
-	snake = new Snake(gameBoardWidth,gameBoardHeight);
+	snake = new Snake(gameBoard, gameBoardWidth,gameBoardHeight);
 	apple = new Apple(gameBoard, gameBoardWidth, gameBoardHeight);
 	
 
@@ -34,8 +35,49 @@ void GameBoard::foundApple(Apple& apple,Snake& snake) {
 
 }
 
+void GameBoard::startCountDown(sf::RenderWindow& Game) {
+
+	sf::Font font;
+	if (!font.loadFromFile("../Fonts/Points_Font.ttf")) {
+		std::cout << "ERROR FONT";
+	}
+	
+	sf::Text countDown;
+	countDown.setFont(font);
+	countDown.setCharacterSize(400);
+	countDown.setFillColor(sf::Color::Red);
+	for (int i = 5; i > -1; i--) {
+
+		sf::String count;
+		if (i == 0)
+			count = "GO!";
+		else
+			count = std::to_string(i);
+
+		Game.clear(sf::Color::Black);
+
+		Game.draw(gameBoard);
+		PointSetUp();
+		Game.draw(pointsText);
+		apple->render(Game);
+		snake->render(Game);
+
+
+		
+		countDown.setString(count);
+		countDown.setPosition(sf::Vector2f(Game.getSize().x / 2.f - countDown.getLocalBounds().width / 2.f, Game.getSize().y * .5f));
+		Game.draw(countDown);
+		Game.display();
+		Sleep(1000);
+
+	}
+
+}
+
+
 void GameBoard::gameDisplay(sf::RenderWindow& Game) {
 
+	startCountDown(Game);
 
 	while (Game.isOpen()) {
 
@@ -58,10 +100,10 @@ void GameBoard::BoardSetUp(sf::RenderWindow& Game) {
 	gameBoard.setTexture(grassTexture);
 
 	float sizeX = .75*float(Game.getSize().x) / float(grassTexture.getSize().x);
-	float sizeY = .75*float(Game.getSize().y) / float(grassTexture.getSize().y);
+	float sizeY = .75*float(Game.getSize().y) / float(grassTexture.getSize().y-7);
 
 	gameBoard.setScale((sf::Vector2f(sizeX, sizeY)));
-	gameBoard.setPosition(Game.getSize().x / 8.f, Game.getSize().y / 8.f);
+	gameBoard.setPosition(Game.getSize().x / 8.f, Game.getSize().y / 8.f + (gameBoard.getGlobalBounds().height/120));
 }
 
 void GameBoard::PointSetUp() { //Setup Points(font,position,color...etc)
@@ -74,9 +116,8 @@ void GameBoard::PointSetUp() { //Setup Points(font,position,color...etc)
 }
 
 
-
-
 void GameBoard::drawBoard(sf::RenderWindow& Game) {
+
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
 	PointSetUp();
