@@ -28,9 +28,10 @@ void Apple::newApple(sf::Sprite Board, float gameBoardX, float gameBoardY) {
 
     // Refer to constructor
     do {
-        xPos = Board.getGlobalBounds().left + appleSprite.getScale().x*appleTexture.getSize().x * (rand() % 59);
-        yPos = Board.getGlobalBounds().top + appleSprite.getScale().x*appleTexture.getSize().y * (rand() % 59);
+        xPos = Board.getGlobalBounds().left + appleSprite.getScale().x*appleSprite.getLocalBounds().width * (rand() % 60);
+        yPos = Board.getGlobalBounds().top + appleSprite.getScale().y*appleSprite.getLocalBounds().height * (rand() % 30);
     } while (!Board.getGlobalBounds().contains(xPos, yPos));
+
 
     appleSprite.setPosition(xPos, yPos);
 }

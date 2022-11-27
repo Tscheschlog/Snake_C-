@@ -146,7 +146,7 @@ void Snake::updateSnakeTrail() {
      else if (getHeadPos().xPos < board.getGlobalBounds().left)
          return true;
      // Collide with bottom wall
-     else if (getHeadPos().yPos >= board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
+     else if (getHeadPos().yPos > board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
          return true;
      // Collide with top wall
      else if (getHeadPos().yPos < board.getGlobalBounds().top)

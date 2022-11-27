@@ -1,16 +1,36 @@
-﻿  GameBoard.cpp
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(41,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(41,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(31,96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Apple.cpp
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(20,59): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(31,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(21,41): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(102,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(103,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(24,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(24,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(31,45): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(32,44): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(33,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(33,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(36,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Apple.cpp(36,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe
