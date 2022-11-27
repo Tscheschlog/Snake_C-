@@ -125,9 +125,14 @@ void GameBoard::drawBoard(sf::RenderWindow& Game) {
 
 	apple->render(Game);
 
-	snake->render(Game);
-	snake->updateSnakeBody();
-	
+
+	if (snake->collisionHandler(gameBoard)) {
+		std::cout << "COLLISION!\n";
+	}
+	else {
+		snake->render(Game);
+		snake->updateSnakeBody();
+	}
 	Game.display();
 }
 

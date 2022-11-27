@@ -1,0 +1,103 @@
+[33mcommit 8aa5c54b4ce0970a56552557fdd047cc1306c785[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/prototype[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Sat Nov 26 21:48:21 2022 -0500
+
+    Added Countdown
+
+[33mcommit 2aecfc766336c75824192a8c3b83b65407d46966[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Wed Nov 23 13:58:26 2022 -0500
+
+    Created SoundFX
+
+[33mcommit 12444525f54cfd9ab555aa6bf4637a3447eb02ef[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Mon Nov 21 01:46:17 2022 -0500
+
+    Added cool music
+
+[33mcommit 76ccc5a03d23acfdf5ca6c61b2ced7deddb842a6[m
+Merge: afc6b85 0d233c2
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Mon Nov 21 00:47:31 2022 -0500
+
+    Fixed Merge Conflict?
+
+[33mcommit afc6b85ce6f03bac47be48205801b1695e0c9f42[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Mon Nov 21 00:13:18 2022 -0500
+
+    Menu Music Test
+
+[33mcommit 0d233c2a040d86a342bd3c7f6767382279ed8edb[m
+Author: Matthew-Berasa <meberasa5348@eagle.fgcu.edu>
+Date:   Fri Nov 11 20:04:29 2022 -0500
+
+    my changes
+
+[33mcommit 5d39ed599523f4428c6ac22aef23dd33aa27e84b[m
+Author: Matthew-Berasa <meberasa5348@eagle.fgcu.edu>
+Date:   Mon Nov 7 18:51:37 2022 -0500
+
+    my changes
+
+[33mcommit 0c8c8bc7d6487efb4b08dec553333e6eb5bd34db[m
+Merge: 2ddc615 04a3c5d
+Author: Matthew-Berasa <meberasa5348@eagle.fgcu.edu>
+Date:   Fri Nov 4 22:50:58 2022 -0400
+
+    Merge branch 'prototype' of https://github.com/Tscheschlog/Snake_C- into prototype
+
+[33mcommit 2ddc615ed61d500d302109b9a40c8ad7dc7d2ac3[m
+Author: Matthew-Berasa <meberasa5348@eagle.fgcu.edu>
+Date:   Fri Nov 4 22:45:52 2022 -0400
+
+    Added Matthew Berasa to README
+
+[33mcommit 04a3c5d79711733a1dc3ab1c3a2d4770d70ff90b[m
+Author: Matthew-Berasa <meberasa5348@eagle.fgcu.edu>
+Date:   Fri Nov 4 22:27:27 2022 -0400
+
+    Added Matthew Berasa to README
+
+[33mcommit bc7e1a51deba1b15c4b37f0157454e5404e3512a[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Fri Nov 4 14:45:52 2022 -0400
+
+    Readme.md update
+
+[33mcommit c03313968304338cf1e38d86a5f26f0fcc271b6e[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Fri Nov 4 14:30:26 2022 -0400
+
+    ReadMe
+
+[33mcommit 90fa55226aeb80205ef1e72b034e15a00c6a0a98[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Fri Nov 4 13:59:23 2022 -0400
+
+    Added my name
+
+[33mcommit abdf76874d0a249645ecff440977aecbb5f2cc30[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Fri Nov 4 13:49:26 2022 -0400
+
+    Update ReadMe
+
+[33mcommit ebe0f27f946b3352fc19a7b73d251e4418cec249[m
+Author: Christopher Tscheschlog <72578289+Tscheschlog@users.noreply.github.com>
+Date:   Fri Nov 4 13:38:35 2022 -0400
+
+    Create Read.md
+
+[33mcommit 47bb479be9af58491e13460af637421c62b98c08[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Wed Nov 2 05:21:42 2022 -0400
+
+    Combined + added Main menu
+
+[33mcommit c4bd7ef21c9479ee02b60f7c0c86d4432fa315b5[m
+Author: Tscheschlog <Chris Tscheschlog>
+Date:   Wed Oct 26 05:20:55 2022 -0400
+
+    First commit

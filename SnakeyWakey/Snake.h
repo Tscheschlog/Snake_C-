@@ -36,6 +36,8 @@ private:
 public:
     Snake(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
+    bool collisionHandler(sf::Sprite board);
+
     segment getHeadPos() {
         return body[0];
     }

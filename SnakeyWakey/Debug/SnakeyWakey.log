@@ -1,16 +1,95 @@
-﻿  GameBoard.cpp
-C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(32,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\Snake.h(32,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(31,96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Snake.cpp
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(32,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(32,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(12,50): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(31,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(13,49): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(102,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\programming2final\Snake_C-\SnakeyWakey\GameBoard.cpp(103,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  SnakeyWakey.vcxproj -> C:\programming2final\Snake_C-\Debug\SnakeyWakey.exe
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(14,67): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(15,49): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(16,72): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(17,49): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(23,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(23,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(24,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(24,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(25,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(25,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(27,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(27,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(28,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(28,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(29,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(29,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(41,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(42,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(49,27): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(50,27): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(79,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(79,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(80,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(80,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe

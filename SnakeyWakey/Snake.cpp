@@ -137,6 +137,25 @@ void Snake::updateSnakeTrail() {
 
  }
 
+ bool Snake::collisionHandler(sf::Sprite board) {
+
+     // Collide with right wall
+     if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width)
+         return true;
+     // Collide with left wall
+     else if (getHeadPos().xPos < board.getGlobalBounds().left)
+         return true;
+     // Collide with bottom wall
+     else if (getHeadPos().yPos >= board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
+         return true;
+     // Collide with top wall
+     else if (getHeadPos().yPos < board.getGlobalBounds().top)
+         return true;
+
+     // No collision with walls
+     return false;
+ }
+
  void Snake::movementHandler(sf::Event event) {
      int last = getLastDirection();
 
@@ -156,5 +175,7 @@ void Snake::updateSnakeTrail() {
                  if (last == 4) return;
                     setLastDirection(2);
              }
+
+
  }
 
