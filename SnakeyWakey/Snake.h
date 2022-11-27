@@ -13,7 +13,16 @@ struct segment {
     sf::RectangleShape shape;
     int xPos;
     int yPos;
+    inline bool operator==(segment&);
 };
+
+bool segment::operator==(segment& seg2) {
+
+    if (xPos == seg2.xPos && yPos == seg2.yPos) {
+        return true;
+    }
+    return false;
+}
 
 class Snake  {
 
@@ -32,11 +41,12 @@ private:
         seg.shape.setPosition(seg.xPos, seg.yPos);
 
     }
-
+    bool wallCollision(sf::Sprite);
+    bool bodyCollision();
 public:
     Snake(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
-    bool collisionHandler(sf::Sprite board);
+    bool collisionHandler(sf::Sprite);
 
     segment getHeadPos() {
         return body[0];

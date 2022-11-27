@@ -137,7 +137,7 @@ void Snake::updateSnakeTrail() {
 
  }
 
- bool Snake::collisionHandler(sf::Sprite board) {
+ bool Snake::wallCollision(sf::Sprite board) {
 
      // Collide with right wall
      if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width)
@@ -153,6 +153,30 @@ void Snake::updateSnakeTrail() {
          return true;
 
      // No collision with walls
+     return false;
+
+ }
+
+ bool Snake::bodyCollision() {
+
+     // Loop through each segment and compare position to head
+     for (int i = 1; i < length; i++) {
+
+         if (getHeadPos() == body[i])
+             return true;
+     }
+
+     return false;
+ }
+
+ bool Snake::collisionHandler(sf::Sprite board) {
+
+     // There was a collision
+     if (wallCollision(board) || bodyCollision()) {
+         return true;
+     }
+
+     // No Collisions Occur
      return false;
  }
 
