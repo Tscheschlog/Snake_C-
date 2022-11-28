@@ -25,8 +25,9 @@ bool segment::operator==(segment& seg2) {
 }
 
 class Snake  {
-
+    friend class Options;
 private:
+    char snakeColor;
     int speed;
     int res;
     int length;
@@ -34,7 +35,7 @@ private:
     std::array<int, 2> lastPosition;
     std::vector<segment> body{};
 
-    void initSnakeBody(sf::Sprite, float gameBoardX, float gameBoardY);
+    void initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY);
 
     void updateShapePosition(segment& seg) {
 
@@ -47,6 +48,10 @@ public:
     Snake(sf::Sprite Board, float gameBoardX, float gameBoardY);
 
     bool collisionHandler(sf::Sprite);
+
+    Snake() {
+
+    };
 
     segment getHeadPos() {
         return body[0];
@@ -71,4 +76,6 @@ public:
     void setLastDirection(int num) {
         lastDirection = num;
     }
+
+    void setSnakeColor(sf::RectangleShape& rect);
 };

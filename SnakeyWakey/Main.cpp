@@ -5,21 +5,24 @@
 #include "Apple.h"
 #include "Menu.h"
 #include "GameBoard.h"
+#include "Options.h"
 
 
 
 int main() {
 
     // Create the main menu
-    Menu playerMenu;
+    Menu playerMenu(50);
 
     // Set the random time for apple spawns
     std::srand(time(0));
 
+    
     if (playerMenu.openGameWindow) {
-        if (playerMenu.singlePlayer)
+        Options optionsMenu;
+        if (playerMenu.singlePlayer && playerMenu.openGameWindow)
             GameBoard SinglePlayerBoard;
-        else
+        else if(!playerMenu.singlePlayer && playerMenu.openGameWindow)
             GameBoard MultiplayerBoard;
     }
 
