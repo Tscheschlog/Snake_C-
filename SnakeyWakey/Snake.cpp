@@ -1,8 +1,10 @@
 #include "Snake.h";
+#include "Options.h";
 
 
 
 void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) {
+        snakeColor = Options::snakeColor;
 
         segment head;
         segment body;
@@ -16,9 +18,9 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) 
         tail.xPos = board.getGlobalBounds().left + gameBoardX / 2 - 20 - 20;
         tail.yPos = board.getGlobalBounds().top + gameBoardY / 2;
 
-        head.shape.setFillColor(sf::Color::Green);
-        body.shape.setFillColor(sf::Color::Green);
-        tail.shape.setFillColor(sf::Color::Green);
+        setSnakeColor(head.shape);
+        setSnakeColor(body.shape);
+        setSnakeColor(tail.shape);
 
         head.shape.setSize(sf::Vector2f(res, res));
         body.shape.setSize(sf::Vector2f(res, res));
@@ -36,9 +38,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) 
 
 
 Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY) {
-        
-    
-        speed = gameBoardX / 60;
+        speed = (gameBoardX / 60);
         res = gameBoardX / 60;
         length = 3;
 
@@ -52,6 +52,35 @@ Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY) {
         // Shape and position set
         initSnakeBody(board, gameBoardX, gameBoardY);
 
+}
+
+void Snake::setSnakeColor(sf::RectangleShape &rect) {
+    switch (snakeColor) {
+    case 'W': {
+        rect.setFillColor(sf::Color::White);
+        break;
+    }
+    case 'R': {
+        rect.setFillColor(sf::Color::Red);
+        break;
+    }
+    case 'G': {
+        rect.setFillColor(sf::Color::Green);
+        break;
+    }
+    case 'B': {
+        rect.setFillColor(sf::Color::Blue);
+        break;
+    }
+    case 'Y': {
+        rect.setFillColor(sf::Color::Yellow);
+        break;
+    }
+    case 'M': {
+        rect.setFillColor(sf::Color::Magenta);
+    }
+    }
+    
 }
 
 
@@ -75,7 +104,7 @@ void Snake::setLastPostion(int x, int y) {
         points++;
 
         segment newSeg;
-        newSeg.shape.setFillColor(sf::Color::Green);
+        setSnakeColor(newSeg.shape);
         newSeg.shape.setSize(sf::Vector2f(res, res));
         newSeg.shape.setPosition(-res, -res);
 

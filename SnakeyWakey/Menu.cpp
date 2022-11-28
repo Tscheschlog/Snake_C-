@@ -7,10 +7,12 @@
 #include "SFML\System.hpp"
 
 
-Menu::Menu() { //Setup Menu window  
+Menu::Menu(int fps) { //Setup Menu window  
 	sf::RenderWindow menuWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
+	menuWindow.setFramerateLimit(fps);
 	Continue(menuWindow);
 }
+
 
 void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
 
@@ -23,6 +25,9 @@ void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
 
 }
 
+bool Menu::openGameWindow = true;
+
+
 void Menu::Continue(sf::RenderWindow& target) {
 	sound.playMusic("../Music/music.ogg");
 	while (target.isOpen()) {
@@ -30,22 +35,22 @@ void Menu::Continue(sf::RenderWindow& target) {
 		sf::Event eventMenu;
 		while (target.pollEvent(eventMenu)) {
 			if (eventMenu.type == sf::Event::Closed) {
+				openGameWindow = false;
 				target.close();
-				openGameWindow = false; 
 			}
 			else if (eventMenu.type == sf::Event::KeyPressed && eventMenu.key.code == sf::Keyboard::Escape) {
-				target.close();
 				openGameWindow = false;
+				target.close();
 			}
 			else if (eventMenu.type == sf::Event::MouseButtonPressed && eventMenu.mouseButton.button == sf::Mouse::Left) { //Checks if users clicks on button
 
 				if (buttonSinglePlayer.getGlobalBounds().contains(sf::Mouse::getPosition(target).x, sf::Mouse::getPosition(target).y)) {
-					target.close();
 					singlePlayer = true; //Single Player Button pressed
+					target.close();
 				}
 				else if (buttonMultiPlayer.getGlobalBounds().contains(sf::Mouse::getPosition(target).x, sf::Mouse::getPosition(target).y)) {
+					singlePlayer = false; //MultiPlayer Button pressed
 					target.close();
-					singlePlayer = false; //MultipPlayer Button pressed
 				}
 			}
 		}

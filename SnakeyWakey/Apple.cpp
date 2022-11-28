@@ -1,18 +1,35 @@
 #include "Apple.h"
+#include "Options.h"
 #include <iostream>
 
-Apple::Apple(sf::Sprite Board, float gameBoardX, float gameBoardY) { //Setup Apple(size, texture, initial position...etc) 
+Apple::Apple(sf::Sprite Board, float gameBoardX, float gameBoardY) { //Setup Apple(size, texture, initial position...etc)
+    appleColor = Options::appleColor;
 
-    if (!appleTexture.loadFromFile("../Images/Apple.png")) {
-        std::cout << "UNABLE TO LOAD ASSET";
+    switch (appleColor) {
+    case 'R': {
+        appleTexture.loadFromFile("../Images/RedApple.png");
+        appleSprite.setTexture(appleTexture);
+        break;
     }
-    else {
-        std::cout << "Asset Loaded";
+    case 'G': {
+        appleTexture.loadFromFile("../Images/GreenApple.png");
+        appleSprite.setTexture(appleTexture);
+        break;
     }
-    appleSprite.setTexture(appleTexture);
+    case 'B': {
+        appleTexture.loadFromFile("../Images/BlueApple.png");
+        appleSprite.setTexture(appleTexture);
+        break;
+    }
+    case 'Y': {
+        appleTexture.loadFromFile("../Images/YellowApple.png");
+        appleSprite.setTexture(appleTexture);
+    }
+    }
 
-    float sizeX = gameBoardX / 60 / float(appleTexture.getSize().x);
-    float sizeY = gameBoardX / 60 / float(appleTexture.getSize().y);
+   
+    float sizeX = 60 / float(appleTexture.getSize().x);
+    float sizeY = 60 / float(appleTexture.getSize().y);
 
     appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));
 
@@ -23,6 +40,7 @@ Apple::Apple(sf::Sprite Board, float gameBoardX, float gameBoardY) { //Setup App
 
     appleSprite.setPosition(xPos, yPos);
 }
+
 
 void Apple::newApple(sf::Sprite Board, float gameBoardX, float gameBoardY) {
 

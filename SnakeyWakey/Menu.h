@@ -12,10 +12,14 @@ class Menu {
 	sf::RectangleShape buttonSinglePlayer, buttonMultiPlayer;
 	Sound sound;
 public:
-	Menu();
-	bool singlePlayer, openGameWindow = true;
-	void highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target);
+	bool singlePlayer;
+	static bool openGameWindow;
+	Menu(int fps);
+	Menu() {
+
+	};
 	void MenuButtonSetup(sf::RectangleShape& Rect, sf::RenderWindow& target, sf::Vector2f position);
+	void highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target);
 	void Continue(sf::RenderWindow& target);
 	void drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont, float heightFactor);
 	void DrawMenu(sf::RenderWindow& target);

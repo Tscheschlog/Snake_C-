@@ -39,7 +39,11 @@
     <ClCompile Include="GameBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="SoundFX.cpp">
+=======
+    <ClCompile Include="Options.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +60,11 @@
     <ClInclude Include="GameBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="SoundFX.h">
+=======
+    <ClInclude Include="Options.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
