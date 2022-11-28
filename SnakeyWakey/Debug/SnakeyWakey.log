@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Snake.cpp
 C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(41,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -94,3 +95,6 @@ C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(80,40): warning C4244
 C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.cpp(80,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   LINK : C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe not found or not built by the last incremental link; performing full link
   SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe
+=======
+﻿  SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe
+>>>>>>> main
