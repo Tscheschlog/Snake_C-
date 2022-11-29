@@ -21,9 +21,9 @@ int main() {
     if (playerMenu.openGameWindow) {
         Options optionsMenu;
         if (playerMenu.singlePlayer && playerMenu.openGameWindow)
-            GameBoard SinglePlayerBoard;
+            GameBoard SinglePlayerBoard(playerMenu.singlePlayer);
         else if(!playerMenu.singlePlayer && playerMenu.openGameWindow)
-            GameBoard MultiplayerBoard;
+            GameBoard MultiplayerBoard(playerMenu.singlePlayer);
     }
 
     return 0;
