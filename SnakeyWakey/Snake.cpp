@@ -51,13 +51,13 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
         this->body.push_back(head);
         this->body.push_back(body);
         this->body.push_back(tail);
-
 }
 
 
 Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, bool isSinglePlayer = true) {
         speed = gameBoardX / 60;
         res = gameBoardX / 60;
+        points = 0;
         length = 3;
 
         // Starting direction
@@ -118,7 +118,7 @@ void Snake::setLastPostion(int x, int y) {
         }
  }
 
- void Snake::appleEaten(int &points) {
+ void Snake::appleEaten() {
 
         length++;
         points++;

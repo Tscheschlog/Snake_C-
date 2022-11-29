@@ -17,7 +17,6 @@ GameBoard::GameBoard(bool isSinglePlayer) {
 
 	gameBoardWidth = gameBoard.getGlobalBounds().width;
 	gameBoardHeight = gameBoard.getGlobalBounds().height;
-	points = 0;
 
 	snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, isSinglePlayer);
 	apple = new Apple(gameBoard, gameBoardWidth, gameBoardHeight);
@@ -35,7 +34,7 @@ void GameBoard::foundApple(Apple& apple,Snake& snake) {
 
     if (apple.appleSprite.getGlobalBounds().contains(snake.getHeadPos().xPos,snake.getHeadPos().yPos)) { //Checks if snake head is in the bounds of the Apple
         apple.newApple(gameBoard,gameBoardWidth,gameBoardHeight);
-        snake.appleEaten(points);
+        snake.appleEaten();
     }
 
 }
@@ -172,7 +171,7 @@ void GameBoard::PointSetUp() { //Setup Points(font,position,color...etc)
 	pointsText.setFont(pointsFont);
 	pointsText.setFillColor(sf::Color::Red);
 	pointsText.setCharacterSize(100);
-	pointsText.setString("Points " + std::to_string(points));
+	pointsText.setString("Points " + std::to_string(snake_1->getPoints()));
 	pointsText.setPosition(0, 0);
 }
 

@@ -31,6 +31,7 @@ private:
     int speed;
     int res;
     int length;
+    int points;
     int lastDirection;
     std::array<int, 2> lastPosition;
     std::vector<segment> body{};
@@ -60,7 +61,7 @@ public:
 
     void render(sf::RenderWindow&);
 
-    void appleEaten(int &points);
+    void appleEaten();
 
     void updateSnakeTrail();
 
@@ -68,6 +69,10 @@ public:
 
     void movementHandler_P1(sf::Event);
     void movementHandler_P2(sf::Event);
+
+    int getPoints() {
+        return points;
+    }
 
     int getLastDirection() {
         return lastDirection;
