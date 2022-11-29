@@ -3,20 +3,12 @@
 
 
 
-void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) {
+void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, bool isPlayer1) {
         snakeColor = Options::snakeColor;
 
         segment head;
         segment body;
         segment tail;
-
-        // Starting Positions of snake always inside Game Board
-        head.xPos = board.getGlobalBounds().left + gameBoardX / 2;
-        head.yPos = board.getGlobalBounds().top + gameBoardY / 2;
-        body.xPos = board.getGlobalBounds().left + gameBoardX / 2 - 20;
-        body.yPos = board.getGlobalBounds().top + gameBoardY / 2;
-        tail.xPos = board.getGlobalBounds().left + gameBoardX / 2 - 20 - 20;
-        tail.yPos = board.getGlobalBounds().top + gameBoardY / 2;
 
         setSnakeColor(head.shape);
         setSnakeColor(body.shape);
@@ -25,6 +17,32 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) 
         head.shape.setSize(sf::Vector2f(res, res));
         body.shape.setSize(sf::Vector2f(res, res));
         tail.shape.setSize(sf::Vector2f(res, res));
+
+        // Starting Positions of Player 1 Snake
+
+        int MAX_X = int(gameBoardX) / res;
+        int MAX_Y = int(gameBoardY) / res;
+
+        std::cout << "Max columns: " << MAX_X << "\n";
+        std::cout << "Max rows: " << MAX_Y << "\n";
+
+        if (isPlayer1) {
+            head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 - 10);
+            head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
+            body.xPos = head.xPos - head.shape.getGlobalBounds().width;
+            body.yPos = head.yPos;
+            tail.xPos = body.xPos - head.shape.getGlobalBounds().width;
+            tail.yPos = head.yPos;
+        }
+        // Starting Positions of Player 2 Snake
+        else {
+            head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 + 10);
+            head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
+            body.xPos = head.xPos + head.shape.getGlobalBounds().width;
+            body.yPos = head.yPos;
+            tail.xPos = body.xPos + head.shape.getGlobalBounds().width;
+            tail.yPos = head.yPos;
+        }
 
         head.shape.setPosition(head.xPos, head.yPos);
         body.shape.setPosition(body.xPos, body.yPos);
@@ -37,21 +55,23 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY) 
 }
 
 
-Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY) {
-        speed = (gameBoardX / 60);
+Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, bool isSinglePlayer = true) {
+        speed = gameBoardX / 60;
         res = gameBoardX / 60;
         length = 3;
 
-        // Right to start off
-        lastDirection = 2;
+        // Starting direction
+        if (isSinglePlayer)
+            lastDirection = 2;
+        else
+            lastDirection = 4;
 
         // These are changed every frame so what they are initialized to does not matter
         lastPosition[0] = gameBoardX;
         lastPosition[1] = gameBoardY;
 
         // Shape and position set
-        initSnakeBody(board, gameBoardX, gameBoardY);
-
+        initSnakeBody(board, gameBoardX, gameBoardY, isSinglePlayer);
 }
 
 void Snake::setSnakeColor(sf::RectangleShape &rect) {
@@ -111,29 +131,29 @@ void Snake::setLastPostion(int x, int y) {
         body.push_back(newSeg);
  }
 
-void Snake::updateSnakeTrail() {
+ void Snake::updateSnakeTrail() {
 
 
-        for (int i = 1; i < length; i++) {
+     for (int i = 1; i < length; i++) {
 
-            int temp_x = body[i].xPos;
-            int temp_y = body[i].yPos;
+         int temp_x = body[i].xPos;
+         int temp_y = body[i].yPos;
 
-            body[i].xPos = lastPosition[0];
-            body[i].yPos = lastPosition[1];
+         body[i].xPos = lastPosition[0];
+         body[i].yPos = lastPosition[1];
 
-            lastPosition[0] = temp_x;
-            lastPosition[1] = temp_y;
+         lastPosition[0] = temp_x;
+         lastPosition[1] = temp_y;
 
-        }
+     }
 
-        for (auto& item : body) {
+     for (auto& item : body) {
 
-            updateShapePosition(item);
+         updateShapePosition(item);
 
-        }
+     }
 
-}
+ }
 
  void Snake::updateSnakeBody() {
 
@@ -209,26 +229,57 @@ void Snake::updateSnakeTrail() {
      return false;
  }
 
- void Snake::movementHandler(sf::Event event) {
+ void Snake::movementHandler_P1(sf::Event event) {
      int last = getLastDirection();
 
              if (event.key.code == sf::Keyboard::Up) {
-                 if (last == 3) return;
+                 // Do not allow down
+                 if (last == 3) 
+                     return;
+                 else
                     setLastDirection(1);
              }
              if (event.key.code == sf::Keyboard::Down) {
-                 if (last == 1) return;
+                 // Do not allow up
+                 if (last == 1) 
+                     return;
+                 else
                     setLastDirection(3);
              }
              if (event.key.code == sf::Keyboard::Left) {
-                 if (last == 2) return;
+                 // Do not allow right
+                 if (last == 2) 
+                     return;
+                 else
                     setLastDirection(4);
              }
              if (event.key.code == sf::Keyboard::Right) {
-                 if (last == 4) return;
+                 // Do not allow left
+                 if (last == 4) 
+                     return;
+                 else
                     setLastDirection(2);
              }
+ }
 
+ void Snake::movementHandler_P2(sf::Event event) {
+     int last = getLastDirection();
 
+     if (event.key.code == sf::Keyboard::W) {
+         if (last == 3) return;
+         setLastDirection(1);
+     }
+     if (event.key.code == sf::Keyboard::S) {
+         if (last == 1) return;
+         setLastDirection(3);
+     }
+     if (event.key.code == sf::Keyboard::A) {
+         if (last == 2) return;
+         setLastDirection(4);
+     }
+     if (event.key.code == sf::Keyboard::D) {
+         if (last == 4) return;
+         setLastDirection(2);
+     }
  }
 

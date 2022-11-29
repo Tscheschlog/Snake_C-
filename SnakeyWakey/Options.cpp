@@ -45,7 +45,7 @@ void Options::TextSetup(sf::RenderWindow& Opt, float postionX, float postionY, f
 	OptionsText.setFillColor(sf::Color::Red);
 	OptionsText.setCharacterSize(sizeText);
 	OptionsText.setString(stringText);
-	OptionsText.setPosition(sf::Vector2f((postionX - OptionsText.getLocalBounds().width / 2.f), postionY));
+	OptionsText.setPosition(sf::Vector2f((postionX - OptionsText.getLocalBounds().width / 2.f), postionY*0.90f));
 
 	Opt.draw(OptionsText);
 }
@@ -254,9 +254,9 @@ void Options::changeAppleColor(sf::RenderWindow& Opt) {
 }
 
 void Options::snakeSpeedOption(sf::RenderWindow& Opt) {
-	TextSetup(Opt, Opt.getSize().x * .50, Opt.getSize().y * .55, 100, std::to_string(snakeSpeed));
-	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .51, Opt.getSize().y * .57), true);
-	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .48, Opt.getSize().y * .57), false);
+	TextSetup(Opt, Opt.getSize().x * .51f, Opt.getSize().y * .5825, 100, std::to_string(snakeSpeed));
+	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .535, Opt.getSize().y * .57), true);
+	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .465, Opt.getSize().y * .57), false);
 
 	changeSnakeSpeed(Opt);
 }
@@ -296,9 +296,3 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 
 	Opt.display();
 }
-
-
-
-
-
-

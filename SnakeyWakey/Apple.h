@@ -17,9 +17,7 @@ public:
     sf::Sprite appleSprite;
     int xPos;
     int yPos;
-    Apple() {
-
-    };
+    Apple() = default;
     Apple(sf::Sprite Board, float gameBoardX,float gameBoardY);
 
     void newApple(sf::Sprite Board, float gameBoardX, float gameBoardY);

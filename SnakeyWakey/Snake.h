@@ -35,7 +35,7 @@ private:
     std::array<int, 2> lastPosition;
     std::vector<segment> body{};
 
-    void initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY);
+    void initSnakeBody(sf::Sprite, float, float, bool);
 
     void updateShapePosition(segment& seg) {
 
@@ -44,14 +44,13 @@ private:
     }
     bool wallCollision(sf::Sprite);
     bool bodyCollision();
+
 public:
-    Snake(sf::Sprite Board, float gameBoardX, float gameBoardY);
+    Snake(sf::Sprite, float, float, bool);
 
     bool collisionHandler(sf::Sprite);
 
-    Snake() {
-
-    };
+    Snake() = default;
 
     segment getHeadPos() {
         return body[0];
@@ -67,7 +66,8 @@ public:
 
     void updateSnakeBody();
 
-    void movementHandler(sf::Event event);
+    void movementHandler_P1(sf::Event);
+    void movementHandler_P2(sf::Event);
 
     int getLastDirection() {
         return lastDirection;
