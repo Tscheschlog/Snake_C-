@@ -12,8 +12,7 @@ class Menu {
 	sf::RectangleShape buttonSinglePlayer, buttonMultiPlayer;
 	Sound sound;
 public:
-	bool singlePlayer;
-	static bool openGameWindow;
+	static bool openGameWindow, singlePlayer;
 	Menu(int fps);
 	Menu() {
 

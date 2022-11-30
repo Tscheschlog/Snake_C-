@@ -13,33 +13,36 @@ GameBoard::GameBoard(bool isSinglePlayer) {
 	gameWindow = new sf::RenderWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
 	gameWindow->setFramerateLimit(12);
 
+	snakeColor1 = Options::snakeColor1;
+	snakeColor2 = Options::snakeColor2;
+
 	BoardSetUp(*gameWindow);
 
 	gameBoardWidth = gameBoard.getGlobalBounds().width;
 	gameBoardHeight = gameBoard.getGlobalBounds().height;
 
-	snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, isSinglePlayer);
+	snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor1, isSinglePlayer);
 	apple = new Apple(gameBoard, gameBoardWidth, gameBoardHeight);
 
 
 	if (!isSinglePlayer) {
-		snake_2 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, !isSinglePlayer);
+		snake_2 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor2, !isSinglePlayer);
 		gameDisplay_2P(*gameWindow);
 	}
 	else
 		gameDisplay_1P(*gameWindow);
 }
 
-void GameBoard::foundApple(Apple& apple,Snake& snake) {
+void GameBoard::foundApple(Apple& apple,Snake& snake, char &snakeColor) {
 
     if (apple.appleSprite.getGlobalBounds().contains(snake.getHeadPos().xPos,snake.getHeadPos().yPos)) { //Checks if snake head is in the bounds of the Apple
         apple.newApple(gameBoard,gameBoardWidth,gameBoardHeight);
-        snake.appleEaten();
+        snake.appleEaten(snakeColor);
     }
 
 }
 
-void GameBoard::startCountDown_1P(sf::RenderWindow& Game) {
+void GameBoard::startCountDown_1P(sf::RenderWindow& Game, Snake &snake) {
 
 	sf::Font font;
 	if (!font.loadFromFile("../Fonts/Points_Font.ttf")) {
@@ -76,7 +79,7 @@ void GameBoard::startCountDown_1P(sf::RenderWindow& Game) {
 
 }
 
-void GameBoard::startCountDown_2P(sf::RenderWindow& Game) {
+void GameBoard::startCountDown_2P(sf::RenderWindow& Game, Snake &snake) {
 
 	sf::Font font;
 	if (!font.loadFromFile("../Fonts/Points_Font.ttf")) {
@@ -115,7 +118,7 @@ void GameBoard::startCountDown_2P(sf::RenderWindow& Game) {
 
 void GameBoard::gameDisplay_1P(sf::RenderWindow& Game) {
 
-	startCountDown_1P(Game);
+	startCountDown_1P(Game, *snake_1);
 
 	while (Game.isOpen()) {
 
@@ -129,13 +132,13 @@ void GameBoard::gameDisplay_1P(sf::RenderWindow& Game) {
 			if (eventGame.type == sf::Event::KeyPressed && eventGame.key.code == sf::Keyboard::Escape)
 				Game.close();
 		}
-		foundApple(*apple, *snake_1);
+		foundApple(*apple, *snake_1, snakeColor1);
 	}
 }
 
 void GameBoard::gameDisplay_2P(sf::RenderWindow& Game) {
 
-	startCountDown_2P(Game);
+	startCountDown_2P(Game, *snake_2);
 
 	while (Game.isOpen()) {
 
@@ -150,8 +153,8 @@ void GameBoard::gameDisplay_2P(sf::RenderWindow& Game) {
 			if (eventGame.type == sf::Event::KeyPressed && eventGame.key.code == sf::Keyboard::Escape)
 				Game.close();
 		}
-		foundApple(*apple, *snake_1);
-		foundApple(*apple, *snake_2);
+		foundApple(*apple, *snake_1, snakeColor1);
+		foundApple(*apple, *snake_2, snakeColor2);
 	}
 }
 

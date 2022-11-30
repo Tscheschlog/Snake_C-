@@ -26,7 +26,7 @@ void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
 }
 
 bool Menu::openGameWindow = true;
-
+bool Menu::singlePlayer = true;
 
 void Menu::Continue(sf::RenderWindow& target) {
 	sound.playMusic("../Music/music.ogg");
