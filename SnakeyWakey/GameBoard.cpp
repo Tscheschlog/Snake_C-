@@ -1,4 +1,5 @@
 #include "GameBoard.h"
+#include "Menu.h"
 #include <iostream>
 #include <string>
 #include "SFML\Graphics.hpp"
@@ -15,6 +16,7 @@ GameBoard::GameBoard(bool isSinglePlayer) {
 
 	snakeColor1 = Options::snakeColor1;
 	snakeColor2 = Options::snakeColor2;
+
 
 	BoardSetUp(*gameWindow);
 
@@ -121,16 +123,15 @@ void GameBoard::gameDisplay_1P(sf::RenderWindow& Game) {
 
 	while (Game.isOpen()) {
 
-		drawBoard_1P(Game);
-
 		sf::Event eventGame;
 		while (Game.pollEvent(eventGame)) {
 
             snake_1->movementHandler_P1(eventGame);
 
 			if (eventGame.type == sf::Event::KeyPressed && eventGame.key.code == sf::Keyboard::Escape)
-				Game.close();
+				Game.close();			
 		}
+		drawBoard_1P(Game);
 		foundApple(*apple, *snake_1, snakeColor1);
 	}
 }
@@ -191,6 +192,9 @@ void GameBoard::drawBoard_1P(sf::RenderWindow& Game) {
 		snake_1->render(Game);
 		snake_1->updateSnakeBody();
 	}
+
+	if (snake_1->getGameOver() == true)
+		Menu::drawTextMenu(Game, "GAME OVER", .05, 0);
 	
 	Game.display();
 }
@@ -215,5 +219,8 @@ void GameBoard::drawBoard_2P(sf::RenderWindow& Game) {
 		snake_1->updateSnakeBody();
 	}
 
+	if (snake_2->getGameOver() == true && snake_1->getGameOver() == true)
+		Menu::drawTextMenu(Game, "GAME OVER", .05 , 0);
+	
 	Game.display();
 }

@@ -1,100 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Fonts">
-      <UniqueIdentifier>{bc507537-a14e-4c10-a957-00212fb9f192}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Images">
-      <UniqueIdentifier>{2b8df9f8-01e5-4ecd-9a3d-7c799408e81d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Music">
-      <UniqueIdentifier>{e933251f-5fd9-4565-bfe1-078fdc882be9}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="GameBoard.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Options.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SoundFX.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Apple.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameBoard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< Updated upstream
-    <ClCompile Include="SoundFX.cpp">
-=======
-    <ClCompile Include="Options.cpp">
->>>>>>> Stashed changes
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Apple.h" />
+    <ClInclude Include="GameBoard.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Options.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="SoundFX.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Snake.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Apple.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameBoard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-<<<<<<< Updated upstream
-    <ClInclude Include="SoundFX.h">
-=======
-    <ClInclude Include="Options.h">
->>>>>>> Stashed changes
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Media Include="..\..\..\Users\12676\Downloads\button.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\..\..\source\repos\Project1\Snake\Fonts\Menu_Font.ttf">
-      <Filter>Fonts</Filter>
-    </Font>
+    <Image Include="..\..\SnakeC++\Snake-Game\Images\Grass.jpg" />
+    <Image Include="..\..\SnakeC++\Snake-Game\Images\Apple.png" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\SnakeC++\Snake-Game\Images\Apple.png">
-      <Filter>Images</Filter>
-    </Image>
-    <Image Include="..\..\SnakeC++\Snake-Game\Images\Grass.jpg">
-      <Filter>Images</Filter>
-    </Image>
+    <Font Include="..\..\..\source\repos\Project1\Snake\Fonts\Menu_Font.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Users\12676\Downloads\music.ogg">
-      <Filter>Music</Filter>
-    </None>
-    <None Include="..\..\..\Users\12676\Downloads\button.ogg">
-      <Filter>Music</Filter>
-    </None>
-    <None Include="..\..\..\Users\12676\Downloads\ping.ogg">
-      <Filter>Music</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\..\Users\12676\Downloads\button.wav">
-      <Filter>Music</Filter>
-    </Media>
+    <None Include="..\..\..\Users\12676\Downloads\button.ogg" />
+    <None Include="..\..\..\Users\12676\Downloads\music.ogg" />
+    <None Include="..\..\..\Users\12676\Downloads\ping.ogg" />
   </ItemGroup>
 </Project>

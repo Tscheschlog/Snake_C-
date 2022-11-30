@@ -25,8 +25,10 @@ bool segment::operator==(segment& seg2) {
 }
 
 class Snake  {
+    friend class GameOver;
     friend class Options;
 private:
+    bool gameOver = false;
     int speed;
     int res;
     int length;
@@ -84,4 +86,9 @@ public:
     void setSnakeColor(sf::RectangleShape& rect, char &);
 
     void setPointsColor(char snakeColor, sf::Text &);
+
+    bool getGameOver() {
+        return gameOver;
+    }
+
 };
