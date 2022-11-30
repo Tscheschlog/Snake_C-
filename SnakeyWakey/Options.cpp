@@ -3,7 +3,8 @@
 #include <iostream>
 
 char Options::appleColor = 'R';
-char Options::snakeColor = 'W';
+char Options::snakeColor1 = 'W';
+char Options::snakeColor2 = 'W';
 int Options::snakeSpeed = 1;
 
 Options::Options() {
@@ -43,7 +44,7 @@ void Options::TextSetup(sf::RenderWindow& Opt, float postionX, float postionY, f
 	sf::Text OptionsText;
 	OptionsText.setFont(OptionsFont);
 	OptionsText.setFillColor(sf::Color::Red);
-	OptionsText.setCharacterSize(sizeText);
+	OptionsText.setCharacterSize(Opt.getSize().x * sizeText);
 	OptionsText.setString(stringText);
 	OptionsText.setPosition(sf::Vector2f((postionX - OptionsText.getLocalBounds().width / 2.f), postionY*0.90f));
 
@@ -69,10 +70,10 @@ void Options::ArrowSetup(sf::RenderWindow &Opt, sf::Sprite &optionSprite, sf::Ve
 	Opt.draw(optionSprite);
 }
 
-void Options::SnakeColorOption(sf::RenderWindow& Opt, float postionX, float postionY, sf::Vector2f optionSize) {	
+void Options::SnakeColorOption(sf::RenderWindow& Opt, float postionX, float postionY, sf::Vector2f optionSize, char &color, sf::Sprite snakeRight, sf::Sprite snakeLeft, segment& head, segment& body, segment& tail) {
+
 	ArrowSetup(Opt, snakeRight, sf::Vector2f(postionX + 145.f, postionY - 10.f), true);
 	ArrowSetup(Opt, snakeLeft, sf::Vector2f(postionX - 75.f, postionY - 10.f), false);
-
 
 	head.shape.setPosition(sf::Vector2f(postionX  , postionY));
 	body.shape.setPosition(sf::Vector2f(postionX + 40.f, postionY));
@@ -82,54 +83,53 @@ void Options::SnakeColorOption(sf::RenderWindow& Opt, float postionX, float post
 	body.shape.setSize(optionSize);
 	tail.shape.setSize(optionSize);
 	
-	changeSnakeColor(Opt);
-
+	changeSnakeColor(Opt, color, head, body,tail, snakeRight, snakeLeft);
 
 	Opt.draw(head.shape);
 	Opt.draw(body.shape);
 	Opt.draw(tail.shape);
 }
 
-void Options::changeSnakeColor(sf::RenderWindow &Opt) {
+void Options::changeSnakeColor(sf::RenderWindow &Opt, char &color, segment &head, segment &body, segment &tail, sf::Sprite &snakeRight, sf::Sprite &snakeLeft) {
 	if (ArrowClicked(snakeRight, Opt)) { //Right Snake Arrow clicked
-		switch (snakeColor) {
+		switch (color) {
 		case 'W': {
-			snakeColor = 'G';
+			color = 'G';
 			head.shape.setFillColor(sf::Color::Green);
 			body.shape.setFillColor(sf::Color::Green);
 			tail.shape.setFillColor(sf::Color::Green);
 			break;
 		}
 		case 'G': {
-			snakeColor = 'R';
+			color = 'R';
 			head.shape.setFillColor(sf::Color::Red);
 			body.shape.setFillColor(sf::Color::Red);
 			tail.shape.setFillColor(sf::Color::Red);
 			break;
 		}
 		case 'R':{
-			snakeColor = 'B';
+			color = 'B';
 			head.shape.setFillColor(sf::Color::Blue);
 			body.shape.setFillColor(sf::Color::Blue);
 			tail.shape.setFillColor(sf::Color::Blue);
 			break;
 		}
 		case 'B': {
-			snakeColor = 'Y';
+			color = 'Y';
 			head.shape.setFillColor(sf::Color::Yellow);
 			body.shape.setFillColor(sf::Color::Yellow);
 			tail.shape.setFillColor(sf::Color::Yellow);
 			break;
 		}
 		case 'Y': {
-			snakeColor = 'M';
+			color = 'M';
 			head.shape.setFillColor(sf::Color::Magenta);
 			body.shape.setFillColor(sf::Color::Magenta);
 			tail.shape.setFillColor(sf::Color::Magenta);
 			break;
 		}
 		case 'M': {
-			snakeColor = 'W';
+			color = 'W';
 			head.shape.setFillColor(sf::Color::White);
 			body.shape.setFillColor(sf::Color::White);
 			tail.shape.setFillColor(sf::Color::White);
@@ -137,44 +137,44 @@ void Options::changeSnakeColor(sf::RenderWindow &Opt) {
 		}
 	}
 	else if (ArrowClicked(snakeLeft,Opt)) { //Left Snake Arrow Clicked
-		switch (snakeColor) {
+		switch (color) {
 		case 'G': {
-			snakeColor = 'W';
+			color = 'W';
 			head.shape.setFillColor(sf::Color::White);
 			body.shape.setFillColor(sf::Color::White);
 			tail.shape.setFillColor(sf::Color::White);
 			break;
 		}
 		case 'W': {
-			snakeColor = 'M';
+			color = 'M';
 			head.shape.setFillColor(sf::Color::Magenta);
 			body.shape.setFillColor(sf::Color::Magenta);
 			tail.shape.setFillColor(sf::Color::Magenta);
 			break;
 		}
 		case 'R': {
-			snakeColor = 'G';
+			color = 'G';
 			head.shape.setFillColor(sf::Color::Green);
 			body.shape.setFillColor(sf::Color::Green);
 			tail.shape.setFillColor(sf::Color::Green);
 			break;
 		}
 		case 'B': {
-			snakeColor = 'R';
+			color = 'R';
 			head.shape.setFillColor(sf::Color::Red);
 			body.shape.setFillColor(sf::Color::Red);
 			tail.shape.setFillColor(sf::Color::Red);
 			break;
 		}
 		case 'Y': {
-			snakeColor = 'B';
+			color = 'B';
 			head.shape.setFillColor(sf::Color::Blue);
 			body.shape.setFillColor(sf::Color::Blue);
 			tail.shape.setFillColor(sf::Color::Blue);
 			break;
 		}
 		case 'M': {
-			snakeColor = 'Y';
+			color = 'Y';
 			head.shape.setFillColor(sf::Color::Yellow);
 			body.shape.setFillColor(sf::Color::Yellow);
 			tail.shape.setFillColor(sf::Color::Yellow);
@@ -254,9 +254,8 @@ void Options::changeAppleColor(sf::RenderWindow& Opt) {
 }
 
 void Options::snakeSpeedOption(sf::RenderWindow& Opt) {
-	TextSetup(Opt, Opt.getSize().x * .51f, Opt.getSize().y * .5825, 100, std::to_string(snakeSpeed));
-	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .535, Opt.getSize().y * .57), true);
-	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .465, Opt.getSize().y * .57), false);
+	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .53, Opt.getSize().y * .4725), true);
+	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .46, Opt.getSize().y * .4725), false);
 
 	changeSnakeSpeed(Opt);
 }
@@ -277,22 +276,41 @@ void Options::changeSnakeSpeed(sf::RenderWindow& Opt) {
 void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 	Opt.clear(sf::Color::Black);
 
-	TextSetup(Opt, Opt.getSize().x / 2.f, 0, 150, "Options Menu");
+	if (Menu::singlePlayer == true) { //Executes SinglePlayerOptionsMenu if User in previous Menu Window pressed singlePlayer
+		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 0.05, "Options Menu");
 
-	TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 100, "Snake Color");	
-	SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f));
+		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 0.05, "Snake Color");
+		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
 
-	TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 100, "Apple Color");
-	AppleColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(.25f, .25f));
+		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Apple Color");
+		AppleColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(.25f, .25f));
 
-	TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 100, "Snake Speed");
-	snakeSpeedOption(Opt);
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .45f, 0.05, "Snake Speed");
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, std::to_string(snakeSpeed));
+		snakeSpeedOption(Opt);
 
-	
-	MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
-	Opt.draw(playButton);
-	TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .75f, 250, "Play");
-	highlightButton(playButton, Opt);
+		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
+		Opt.draw(playButton);
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
+		highlightButton(playButton, Opt);
+	}
+	else { //Executes MultiPlayerOptionsMenu if User pressed MultiPlayer
+		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 0.05, "Options Menu");
+		
+		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 0.05, "Player 1");
+		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
+
+		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Player 2");
+		SnakeColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(50.f, 30.f), snakeColor2, snakeRight2, snakeLeft2, player2head, player2body, player2tail);
+
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, "Apple Color");
+		AppleColorOption(Opt, Opt.getSize().x * .485f, Opt.getSize().y * .55f, sf::Vector2f(.25f, .25f));
+
+		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
+		Opt.draw(playButton);
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
+		highlightButton(playButton, Opt);
+	}
 
 	Opt.display();
 }

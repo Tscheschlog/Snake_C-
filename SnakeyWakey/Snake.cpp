@@ -3,16 +3,14 @@
 
 
 
-void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, bool isPlayer1) {
-        snakeColor = Options::snakeColor;
-
+void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, bool isPlayer1, char &snakeColor) {
         segment head;
         segment body;
         segment tail;
 
-        setSnakeColor(head.shape);
-        setSnakeColor(body.shape);
-        setSnakeColor(tail.shape);
+        setSnakeColor(head.shape, snakeColor);
+        setSnakeColor(body.shape, snakeColor);
+        setSnakeColor(tail.shape ,snakeColor);
 
         head.shape.setSize(sf::Vector2f(res, res));
         body.shape.setSize(sf::Vector2f(res, res));
@@ -54,7 +52,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
 }
 
 
-Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, bool isSinglePlayer = true) {
+Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, char& snakeColor, bool isSinglePlayer = true) {
         speed = gameBoardX / 60;
         res = gameBoardX / 60;
         points = 0;
@@ -71,10 +69,10 @@ Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, bool isSingle
         lastPosition[1] = gameBoardY;
 
         // Shape and position set
-        initSnakeBody(board, gameBoardX, gameBoardY, isSinglePlayer);
+        initSnakeBody(board, gameBoardX, gameBoardY, isSinglePlayer, snakeColor);
 }
 
-void Snake::setSnakeColor(sf::RectangleShape &rect) {
+void Snake::setSnakeColor(sf::RectangleShape &rect, char &snakeColor) {
     switch (snakeColor) {
     case 'W': {
         rect.setFillColor(sf::Color::White);
@@ -118,13 +116,13 @@ void Snake::setLastPostion(int x, int y) {
         }
  }
 
- void Snake::appleEaten() {
+ void Snake::appleEaten(char &snakeColor) {
 
         length++;
         points++;
 
         segment newSeg;
-        setSnakeColor(newSeg.shape);
+        setSnakeColor(newSeg.shape, snakeColor);
         newSeg.shape.setSize(sf::Vector2f(res, res));
         newSeg.shape.setPosition(-res, -res);
 
@@ -211,8 +209,9 @@ void Snake::setLastPostion(int x, int y) {
      // Loop through each segment and compare position to head
      for (int i = 1; i < length; i++) {
 
-         if (getHeadPos() == body[i])
+         if (getHeadPos() == body[i]) {
              return true;
+         }
      }
 
      return false;
@@ -222,6 +221,7 @@ void Snake::setLastPostion(int x, int y) {
 
      // There was a collision
      if (wallCollision(board) || bodyCollision()) {
+         gameOver = true;
          return true;
      }
 
@@ -283,3 +283,15 @@ void Snake::setLastPostion(int x, int y) {
      }
  }
 
+ void Snake::setPointsColor(char snakeColor, sf::Text &points) {
+     switch (snakeColor) {
+     case 'W': points.setFillColor(sf::Color::White); break;
+     case 'G': points.setFillColor(sf::Color::Green); break;
+     case 'R': points.setFillColor(sf::Color::Red); break;
+     case 'Y': points.setFillColor(sf::Color::Yellow); break;
+     case 'B': points.setFillColor(sf::Color::Blue); break;
+     case 'M': points.setFillColor(sf::Color::Magenta);
+     }
+ }
+
+ 
