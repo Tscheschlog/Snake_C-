@@ -209,8 +209,9 @@ void Snake::setLastPostion(int x, int y) {
      // Loop through each segment and compare position to head
      for (int i = 1; i < length; i++) {
 
-         if (getHeadPos() == body[i])
+         if (getHeadPos() == body[i]) {
              return true;
+         }
      }
 
      return false;
@@ -220,6 +221,7 @@ void Snake::setLastPostion(int x, int y) {
 
      // There was a collision
      if (wallCollision(board) || bodyCollision()) {
+         gameOver = true;
          return true;
      }
 
@@ -284,6 +286,7 @@ void Snake::setLastPostion(int x, int y) {
  void Snake::setPointsColor(char snakeColor, sf::Text &points) {
      switch (snakeColor) {
      case 'W': points.setFillColor(sf::Color::White); break;
+     case 'G': points.setFillColor(sf::Color::Green); break;
      case 'R': points.setFillColor(sf::Color::Red); break;
      case 'Y': points.setFillColor(sf::Color::Yellow); break;
      case 'B': points.setFillColor(sf::Color::Blue); break;

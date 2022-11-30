@@ -6,23 +6,24 @@
 #include "Apple.h"
 #include "Options.h"
 
-
-class GameBoard
+class GameBoard:public Menu
 {
 private:
 	sf::RenderWindow* gameWindow;
 	sf::Sprite gameBoard;
 	sf::Texture grassTexture;
 	sf::Font pointsFont;
-	sf::Text player1Points, player2Points;
-	Snake* snake_1;
-	Snake* snake_2;
 	Apple* apple;
-	char snakeColor1, snakeColor2;
 	float gameBoardWidth, gameBoardHeight;
 	void startCountDown_1P(sf::RenderWindow& Game);
 	void startCountDown_2P(sf::RenderWindow& Game);
+protected:
+	Snake* snake_1;
+	Snake* snake_2;
+	char snakeColor1, snakeColor2;
+	sf::Text player1Points, player2Points;
 public:
+	GameBoard() = default;
 	GameBoard(bool);
 	void gameDisplay_1P(sf::RenderWindow& Game);
 	void gameDisplay_2P(sf::RenderWindow& Game);
