@@ -20,7 +20,7 @@ public:
 	void MenuButtonSetup(sf::RectangleShape& Rect, sf::RenderWindow& target, sf::Vector2f position);
 	void highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target);
 	void Continue(sf::RenderWindow& target);
-	void drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont, float heightFactor);
+	void drawTextMenu(sf::RenderWindow& target, sf::String title, float sizeFont, float heightFactor);
 	void DrawMenu(sf::RenderWindow& target);
 };
 

@@ -44,7 +44,7 @@ void Options::TextSetup(sf::RenderWindow& Opt, float postionX, float postionY, f
 	sf::Text OptionsText;
 	OptionsText.setFont(OptionsFont);
 	OptionsText.setFillColor(sf::Color::Red);
-	OptionsText.setCharacterSize(sizeText);
+	OptionsText.setCharacterSize(Opt.getSize().x * sizeText);
 	OptionsText.setString(stringText);
 	OptionsText.setPosition(sf::Vector2f((postionX - OptionsText.getLocalBounds().width / 2.f), postionY*0.90f));
 
@@ -254,8 +254,8 @@ void Options::changeAppleColor(sf::RenderWindow& Opt) {
 }
 
 void Options::snakeSpeedOption(sf::RenderWindow& Opt) {
-	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .51, Opt.getSize().y * .4725), true);
-	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .48, Opt.getSize().y * .4725), false);
+	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .53, Opt.getSize().y * .4725), true);
+	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .46, Opt.getSize().y * .4725), false);
 
 	changeSnakeSpeed(Opt);
 }
@@ -277,38 +277,38 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 	Opt.clear(sf::Color::Black);
 
 	if (Menu::singlePlayer == true) { //Executes SinglePlayerOptionsMenu if User in previous Menu Window pressed singlePlayer
-		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 150, "Options Menu");
+		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 0.05, "Options Menu");
 
-		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 100, "Snake Color");
+		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 0.05, "Snake Color");
 		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
 
-		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 100, "Apple Color");
+		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Apple Color");
 		AppleColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(.25f, .25f));
 
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .45f, 100, "Snake Speed");
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 100, std::to_string(snakeSpeed));
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .45f, 0.05, "Snake Speed");
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, std::to_string(snakeSpeed));
 		snakeSpeedOption(Opt);
 
 		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
 		Opt.draw(playButton);
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 250, "Play");
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
 		highlightButton(playButton, Opt);
 	}
 	else { //Executes MultiPlayerOptionsMenu if User pressed MultiPlayer
-		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 150, "Options Menu");
+		TextSetup(Opt, Opt.getSize().x / 2.f, 0, 0.05, "Options Menu");
 		
-		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 100, "Player 1");
+		TextSetup(Opt, Opt.getSize().x * .25f, Opt.getSize().y * .25f, 0.05, "Player 1");
 		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
 
-		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 100, "Player 2");
+		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Player 2");
 		SnakeColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(50.f, 30.f), snakeColor2, snakeRight2, snakeLeft2, player2head, player2body, player2tail);
 
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 100, "Apple Color");
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, "Apple Color");
 		AppleColorOption(Opt, Opt.getSize().x * .485f, Opt.getSize().y * .55f, sf::Vector2f(.25f, .25f));
 
 		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
 		Opt.draw(playButton);
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 250, "Play");
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
 		highlightButton(playButton, Opt);
 	}
 

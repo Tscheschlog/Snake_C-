@@ -58,7 +58,7 @@ void Menu::Continue(sf::RenderWindow& target) {
 	}
 }
 
-void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont, float heightFactor) { //Setup Text(font, color, size, position...etc)
+void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, float sizeFont, float heightFactor) { //Setup Text(font, color, size, position...etc)
 	sf::Font menuFont;
 	if (!menuFont.loadFromFile("../Fonts/Menu_Font.ttf")) {
 		std::cout << "UNABLE TO LOAD";
@@ -68,7 +68,7 @@ void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, int sizeFont
 	menuText.setLetterSpacing(1);
 	menuText.setOutlineColor(sf::Color::White);
 	menuText.setOutlineThickness(1);
-	menuText.setCharacterSize(sizeFont);
+	menuText.setCharacterSize(target.getSize().x * sizeFont);
 	menuText.setFillColor(sf::Color::Red);
 	menuText.setString(title);
 	menuText.setPosition(target.getSize().x / 2.f - menuText.getLocalBounds().width/2.f, target.getSize().y * heightFactor);
@@ -86,20 +86,17 @@ void Menu::MenuButtonSetup(sf::RectangleShape &Rect, sf::RenderWindow &target, s
 
 void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, Buttons
 	target.clear(sf::Color::Black);
-	drawTextMenu(target, "SNAKE", 250, 0);
+	drawTextMenu(target, "SNAKE", .12, 0);
 
 	MenuButtonSetup(buttonSinglePlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 7.10 / 12.0));
 	target.draw(buttonSinglePlayer);
-	drawTextMenu(target, "SINGLE", 125, 7.0 / 12.0);
+	drawTextMenu(target, "SINGLE", .06, 7.0 / 12.0);
 
 	MenuButtonSetup(buttonMultiPlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0));
 	target.draw(buttonMultiPlayer);
-	drawTextMenu(target, "MULTIPLAYER", 125, 9.0 / 12.0);
+	drawTextMenu(target, "MULTIPLAYER", .06, 9.0 / 12.0);
 
 
 	target.display();
 }
-
-
-
 
