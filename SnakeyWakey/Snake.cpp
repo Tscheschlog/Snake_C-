@@ -281,4 +281,14 @@ void Snake::setLastPostion(int x, int y) {
      }
  }
 
+ void Snake::setPointsColor(char snakeColor, sf::Text &points) {
+     switch (snakeColor) {
+     case 'W': points.setFillColor(sf::Color::White); break;
+     case 'R': points.setFillColor(sf::Color::Red); break;
+     case 'Y': points.setFillColor(sf::Color::Yellow); break;
+     case 'B': points.setFillColor(sf::Color::Blue); break;
+     case 'M': points.setFillColor(sf::Color::Magenta);
+     }
+ }
+
  

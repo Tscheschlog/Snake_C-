@@ -83,4 +83,5 @@ public:
 
     void setSnakeColor(sf::RectangleShape& rect, char &);
 
+    void setPointsColor(char snakeColor, sf::Text &);
 };

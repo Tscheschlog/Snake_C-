@@ -42,7 +42,7 @@ void GameBoard::foundApple(Apple& apple,Snake& snake, char &snakeColor) {
 
 }
 
-void GameBoard::startCountDown_1P(sf::RenderWindow& Game, Snake &snake) {
+void GameBoard::startCountDown_1P(sf::RenderWindow& Game) {
 
 	sf::Font font;
 	if (!font.loadFromFile("../Fonts/Points_Font.ttf")) {
@@ -64,8 +64,7 @@ void GameBoard::startCountDown_1P(sf::RenderWindow& Game, Snake &snake) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp();
-		Game.draw(pointsText);
+		PointSetUp(Game,*snake_1, sf::Vector2f(0, 0), snakeColor1, player1Points);
 		apple->render(Game);
 		snake_1->render(Game);
 		
@@ -79,7 +78,7 @@ void GameBoard::startCountDown_1P(sf::RenderWindow& Game, Snake &snake) {
 
 }
 
-void GameBoard::startCountDown_2P(sf::RenderWindow& Game, Snake &snake) {
+void GameBoard::startCountDown_2P(sf::RenderWindow& Game) {
 
 	sf::Font font;
 	if (!font.loadFromFile("../Fonts/Points_Font.ttf")) {
@@ -101,8 +100,8 @@ void GameBoard::startCountDown_2P(sf::RenderWindow& Game, Snake &snake) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp();
-		Game.draw(pointsText);
+		PointSetUp(Game, *snake_1, sf::Vector2f(0, 0), snakeColor1, player1Points);
+		PointSetUp(Game, *snake_2, sf::Vector2f(Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y * .95), snakeColor2, player2Points);
 		apple->render(Game);
 		snake_1->render(Game);
 		snake_2->render(Game);
@@ -118,7 +117,7 @@ void GameBoard::startCountDown_2P(sf::RenderWindow& Game, Snake &snake) {
 
 void GameBoard::gameDisplay_1P(sf::RenderWindow& Game) {
 
-	startCountDown_1P(Game, *snake_1);
+	startCountDown_1P(Game);
 
 	while (Game.isOpen()) {
 
@@ -138,7 +137,7 @@ void GameBoard::gameDisplay_1P(sf::RenderWindow& Game) {
 
 void GameBoard::gameDisplay_2P(sf::RenderWindow& Game) {
 
-	startCountDown_2P(Game, *snake_2);
+	startCountDown_2P(Game);
 
 	while (Game.isOpen()) {
 
@@ -169,21 +168,22 @@ void GameBoard::BoardSetUp(sf::RenderWindow& Game) {
 	gameBoard.setPosition(Game.getSize().x / 8.f, Game.getSize().y / 8.f + (gameBoard.getGlobalBounds().height/120));
 }
 
-void GameBoard::PointSetUp() { //Setup Points(font,position,color...etc)
+void GameBoard::PointSetUp(sf::RenderWindow &Game,Snake &snake, sf::Vector2f pointsPosition, char snakeColor, sf::Text &pointsText) { //Setup Points(font,position,color...etc)
 	pointsFont.loadFromFile("../Fonts/Points_Font.ttf");
 	pointsText.setFont(pointsFont);
-	pointsText.setFillColor(sf::Color::Red);
+	snake.setPointsColor(snakeColor, pointsText);
 	pointsText.setCharacterSize(100);
-	pointsText.setString("Points " + std::to_string(snake_1->getPoints()));
-	pointsText.setPosition(0, 0);
+	pointsText.setString("Points " + std::to_string(snake.getPoints()));
+	pointsText.setPosition(pointsPosition);
+	Game.draw(pointsText);
 }
 
 void GameBoard::drawBoard_1P(sf::RenderWindow& Game) {
 
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
-	PointSetUp();
-	Game.draw(pointsText);
+	PointSetUp(Game, *snake_1, sf::Vector2f(0,0), snakeColor1, player1Points);
+
 
 	apple->render(Game);
 
@@ -199,8 +199,9 @@ void GameBoard::drawBoard_2P(sf::RenderWindow& Game) {
 
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
-	PointSetUp();
-	Game.draw(pointsText);
+	PointSetUp(Game, *snake_1, sf::Vector2f(0, 0), snakeColor1, player1Points);
+	PointSetUp(Game, *snake_2, sf::Vector2f(Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y * .95), snakeColor2, player2Points);
+
 
 	apple->render(Game);
 
