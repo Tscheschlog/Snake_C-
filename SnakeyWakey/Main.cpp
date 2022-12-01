@@ -11,7 +11,7 @@
 
 int main() {
 
-    bool continueGame = true; //Is true unless you close window with ESC or hit Quit Button
+    bool continueGame = true; // is true unless you close window with ESC or hit Quit Button
 
      // Set the random time for apple spawns
     std::srand(time(0));
