@@ -66,7 +66,7 @@ void GameBoard::startCountDown_1P(sf::RenderWindow& Game) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .02);
+		PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
 		apple->render(Game);
 		snake_1->render(Game);
 		
@@ -102,8 +102,8 @@ void GameBoard::startCountDown_2P(sf::RenderWindow& Game) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp(Game, *snake_1, 0,0, snakeColor1, player1Points,.02);
-		PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .02);
+		PointSetUp(Game, *snake_1, 0,0, snakeColor1, player1Points,.03);
+		PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .03);
 		apple->render(Game);
 		snake_1->render(Game);
 		snake_2->render(Game);
@@ -209,7 +209,7 @@ void GameBoard::drawBoard_1P(sf::RenderWindow& Game) {
 
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
-	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .02);
+	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
 
 
 	apple->render(Game);
@@ -240,8 +240,8 @@ void GameBoard::drawBoard_2P(sf::RenderWindow& Game) {
 
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
-	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .02);
-	PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .02);
+	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
+	PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .03);
 
 
 	apple->render(Game);

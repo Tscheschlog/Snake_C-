@@ -187,7 +187,7 @@ void Snake::setLastPostion(int x, int y) {
  bool Snake::wallCollision(sf::Sprite board) {
 
      // Collide with right wall
-     if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width)
+     if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width - res)
          return true;
      // Collide with left wall
      else if (getHeadPos().xPos < board.getGlobalBounds().left)
@@ -196,7 +196,7 @@ void Snake::setLastPostion(int x, int y) {
      else if (getHeadPos().yPos > board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
          return true;
      // Collide with top wall
-     else if (getHeadPos().yPos < board.getGlobalBounds().top)
+     else if (getHeadPos().yPos < board.getGlobalBounds().top - res)
          return true;
 
      // No collision with walls
