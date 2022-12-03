@@ -190,7 +190,7 @@ void GameBoard::BoardSetUp(sf::RenderWindow& Game) {
 	gameBoard.setTexture(grassTexture);
 
 	float sizeX = .75*float(Game.getSize().x) / float(grassTexture.getSize().x);
-	float sizeY = .75*float(Game.getSize().y) / float(grassTexture.getSize().y);
+	float sizeY = .755*float(Game.getSize().y) / float(grassTexture.getSize().y);
 
 	gameBoard.setScale((sf::Vector2f(sizeX, sizeY)));
 	gameBoard.setPosition(Game.getSize().x / 8.f, Game.getSize().y / 8.f + (gameBoard.getGlobalBounds().height/120));

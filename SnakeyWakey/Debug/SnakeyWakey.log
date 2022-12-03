@@ -1,7 +1,25 @@
-﻿  Options.cpp
+﻿  GameBoard.cpp
 C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(44,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(44,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,99): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(41,96): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(41,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(70,67): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(106,65): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(107,136): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(107,101): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(138,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -10,7 +28,7 @@ C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,99): warning C42
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,71): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(138,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -19,8 +37,7 @@ C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,71): warning C42
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(51,47): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,106): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(142,112): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -29,7 +46,7 @@ C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,106): warning C4
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(142,80): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -38,56 +55,142 @@ C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,75): warning C42
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(261,82): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(173,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(173,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(177,112): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(177,80): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(192,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(193,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(203,47): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(205,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(261,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(213,66): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(224,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(226,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(227,112): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(262,83): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(227,81): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(262,58): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(228,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(284,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(286,85): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(289,85): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(292,85): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(293,98): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(296,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(228,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(296,73): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(231,51): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(232,111): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(298,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(302,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(304,82): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(307,82): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(310,85): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(313,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(232,81): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(313,73): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(233,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(315,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(65): warning C4715: 'Options::ArrowClicked': not all control paths return a value
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(233,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(244,66): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(245,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(245,100): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(261,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(263,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(264,112): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(264,81): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(265,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(265,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(268,51): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(269,111): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(269,81): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(270,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\GameBoard.cpp(270,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe
