@@ -258,8 +258,8 @@ void Options::changeAppleColor(sf::RenderWindow& Opt) {
 }
 
 void Options::snakeSpeedOption(sf::RenderWindow& Opt) {
-	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .52, Opt.getSize().y * .55), true);
-	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .475, Opt.getSize().y * .55), false);
+	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .52, Opt.getSize().y * .535), true);
+	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .4575, Opt.getSize().y * .535), false);
 
 	changeSnakeSpeed(Opt);
 }

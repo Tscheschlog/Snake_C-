@@ -1,1 +1,93 @@
-﻿  SnakeyWakey.vcxproj -> C:\Users\matth\Desktop\Snake_C-\Debug\SnakeyWakey.exe
+﻿  Options.cpp
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(44,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Snake.h(44,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,99): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(33,71): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(51,47): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,106): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(60,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(261,82): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(261,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(262,83): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(262,58): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(284,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(286,85): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(289,85): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(292,85): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(293,98): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(296,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(296,73): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(298,78): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(302,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(304,82): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(307,82): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(310,85): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(313,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(313,73): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(315,78): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\chris\source\repos\Snake_C-\SnakeyWakey\Options.cpp(65): warning C4715: 'Options::ArrowClicked': not all control paths return a value
+  SnakeyWakey.vcxproj -> C:\Users\chris\source\repos\Snake_C-\Debug\SnakeyWakey.exe
