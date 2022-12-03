@@ -12,7 +12,8 @@
 
 GameBoard::GameBoard(bool isSinglePlayer, bool &continueGame) {
 	gameWindow = new sf::RenderWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
-	gameWindow->setFramerateLimit(12);
+	fps *= Options::snakeSpeed;
+	gameWindow->setFramerateLimit(fps);
 
 	snakeColor1 = Options::snakeColor1;
 	snakeColor2 = Options::snakeColor2;

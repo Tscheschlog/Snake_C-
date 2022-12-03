@@ -9,6 +9,7 @@
 class GameBoard:public Menu
 {
 private:
+	unsigned int fps = 10;
 	sf::RenderWindow* gameWindow;
 	sf::Sprite gameBoard;
 	sf::Texture grassTexture;
