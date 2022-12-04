@@ -287,7 +287,7 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
 
 		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Apple Color");
-		AppleColorOption(Opt, Opt.getSize().x * .735f - Apple::appleSprite.getGlobalBounds().width / 4, Opt.getSize().y * .335f - Apple::appleSprite.getGlobalBounds().height/ 4, sf::Vector2f(.25f, .25f));
+		AppleColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(.25f, .25f));
 
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .45f, 0.05, "Snake Speed");
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .55f, 0.05, std::to_string(snakeSpeed));
@@ -308,7 +308,7 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 		SnakeColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor2, snakeRight2, snakeLeft2, player2head, player2body, player2tail);
 
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, "Apple Color");
-		AppleColorOption(Opt, Opt.getSize().x * .485f - Apple::appleSprite.getGlobalBounds().width / 8, Opt.getSize().y * .55f - Apple::appleSprite.getGlobalBounds().height / 8, sf::Vector2f(.25f, .25f));
+		AppleColorOption(Opt, Opt.getSize().x * .485f, Opt.getSize().y * .55f , sf::Vector2f(.25f, .25f));
 
 		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0), true);
 		Opt.draw(playButton);
@@ -317,10 +317,14 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 	}
 
 	/*
-	// Set size relative to apple texture selected
+	
+	---Set size relative to apple texture selected---
+	
 	float sizeX = Opt.getSize().x / 20 / float(appleSprite.getLocalBounds().width);
 	float sizeY = Opt.getSize().x / 20 / float(appleSprite.getLocalBounds().height);
-	Apple::appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));*/
+	Apple::appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));
+	
+	*/
 
 	Opt.display();
 }

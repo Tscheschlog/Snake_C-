@@ -24,7 +24,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
         std::cout << "Max columns: " << MAX_X << "\n";
         std::cout << "Max rows: " << MAX_Y << "\n";
 
-        if (isPlayer1) {
+        if (!isPlayer1) {
             head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 - 10);
             head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
             body.xPos = head.xPos - head.shape.getGlobalBounds().width;
@@ -32,7 +32,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
             tail.xPos = body.xPos - head.shape.getGlobalBounds().width;
             tail.yPos = head.yPos;
         }
-        // Starting Positions of Player 2 Snake
+        // Starting Positions of Player 1 Snake
         else {
             head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 + 10);
             head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
@@ -59,7 +59,7 @@ Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, char& snakeCo
         length = 3;
 
         // Starting direction
-        if (isSinglePlayer)
+        if (!isSinglePlayer)
             lastDirection = 2;
         else
             lastDirection = 4;
