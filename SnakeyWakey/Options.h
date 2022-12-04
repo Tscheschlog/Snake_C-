@@ -6,7 +6,7 @@
 #include "SFML\Window.hpp"
 #include "SFML\System.hpp"
 
-class Options: public Apple, Snake, Menu{
+class Options: public Apple, Snake, Menu {
 	friend class GameBoard;
 	friend class Apple;
 private:

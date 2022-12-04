@@ -67,7 +67,7 @@ void GameBoard::startCountDown_1P(sf::RenderWindow& Game) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
+		PointSetUp(Game, *snake_1, Game.getSize().x * .03, Game.getSize().y * .03, snakeColor1, player1Points, .03);
 		apple->render(Game);
 		snake_1->render(Game);
 		
@@ -103,11 +103,12 @@ void GameBoard::startCountDown_2P(sf::RenderWindow& Game) {
 		Game.clear(sf::Color::Black);
 
 		Game.draw(gameBoard);
-		PointSetUp(Game, *snake_1, 0,0, snakeColor1, player1Points,.03);
-		PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .03);
 		apple->render(Game);
 		snake_1->render(Game);
 		snake_2->render(Game);
+
+		PointSetUp(Game, *snake_1, Game.getSize().x * .03, Game.getSize().y * .03, snakeColor1, player1Points,.03);
+		PointSetUp(Game, *snake_2, Game.getSize().x - Game.getSize().x * .15, Game.getSize().y - Game.getSize().y * .09, snakeColor2, player2Points, .03);
 
 		countDown.setString(count);
 		countDown.setPosition(sf::Vector2f(Game.getSize().x / 2.f - countDown.getLocalBounds().width / 2.f, Game.getSize().y * .5f));
@@ -202,15 +203,15 @@ void GameBoard::PointSetUp(sf::RenderWindow &Game,Snake &snake, float positionX,
 	snake.setPointsColor(snakeColor, pointsText);
 	pointsText.setCharacterSize(Game.getSize().x * sizeText);
 	pointsText.setString("Points " + std::to_string(snake.getPoints()));
-	pointsText.setPosition(sf::Vector2f(positionX, positionY * .95));
+	pointsText.setPosition(sf::Vector2f(positionX, positionY));
 	Game.draw(pointsText);
 }
 
 void GameBoard::drawBoard_1P(sf::RenderWindow& Game) {
 
-	Game.clear(sf::Color::Black);
+	Game.clear(sf::Color::Black); 
 	Game.draw(gameBoard);
-	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
+	PointSetUp(Game, *snake_1, Game.getSize().x * .03, Game.getSize().y * .03, snakeColor1, player1Points, .03);
 
 
 	apple->render(Game);
@@ -241,8 +242,8 @@ void GameBoard::drawBoard_2P(sf::RenderWindow& Game) {
 
 	Game.clear(sf::Color::Black);
 	Game.draw(gameBoard);
-	PointSetUp(Game, *snake_1, 0, 0, snakeColor1, player1Points, .03);
-	PointSetUp(Game, *snake_2, Game.getSize().x - player2Points.getLocalBounds().width, Game.getSize().y, snakeColor2, player2Points, .03);
+	PointSetUp(Game, *snake_1, Game.getSize().x * .03, Game.getSize().y * .03, snakeColor1, player1Points, .03);
+	PointSetUp(Game, *snake_2, Game.getSize().x - Game.getSize().x * .15, Game.getSize().y - Game.getSize().y * .09, snakeColor2, player2Points, .03);
 
 
 	apple->render(Game);
