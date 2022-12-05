@@ -131,7 +131,6 @@ void Snake::setLastPostion(int x, int y) {
 
  void Snake::updateSnakeTrail() {
 
-
      for (int i = 1; i < length; i++) {
 
          int temp_x = body[i].xPos;
@@ -189,12 +188,15 @@ void Snake::setLastPostion(int x, int y) {
      // Collide with right wall
      if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width - res)
          return true;
+
      // Collide with left wall
      else if (getHeadPos().xPos < board.getGlobalBounds().left)
          return true;
+
      // Collide with bottom wall
      else if (getHeadPos().yPos > board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
          return true;
+
      // Collide with top wall
      else if (getHeadPos().yPos < board.getGlobalBounds().top - res)
          return true;
@@ -230,36 +232,37 @@ void Snake::setLastPostion(int x, int y) {
  }
 
  void Snake::movementHandler_P1(sf::Event event) {
-     int last = getLastDirection();
 
-             if (event.key.code == sf::Keyboard::Up) {
-                 // Do not allow down
-                 if (last == 3) 
-                     return;
-                 else
-                    setLastDirection(1);
-             }
-             if (event.key.code == sf::Keyboard::Down) {
-                 // Do not allow up
-                 if (last == 1) 
-                     return;
-                 else
-                    setLastDirection(3);
-             }
-             if (event.key.code == sf::Keyboard::Left) {
-                 // Do not allow right
-                 if (last == 2) 
-                     return;
-                 else
-                    setLastDirection(4);
-             }
-             if (event.key.code == sf::Keyboard::Right) {
-                 // Do not allow left
-                 if (last == 4) 
-                     return;
-                 else
-                    setLastDirection(2);
-             }
+    int last = getLastDirection();
+             
+    if (event.key.code == sf::Keyboard::Up) {
+        // Do not allow down
+        if (last == 3) 
+            return;
+        else
+        setLastDirection(1);
+    }
+    if (event.key.code == sf::Keyboard::Down) {
+        // Do not allow up
+        if (last == 1) 
+            return;
+        else
+        setLastDirection(3);
+    }
+    if (event.key.code == sf::Keyboard::Left) {
+        // Do not allow right
+        if (last == 2) 
+            return;
+        else
+        setLastDirection(4);
+    }
+    if (event.key.code == sf::Keyboard::Right) {
+        // Do not allow left
+        if (last == 4) 
+            return;
+        else
+        setLastDirection(2);
+    }
  }
 
  void Snake::movementHandler_P2(sf::Event event) {

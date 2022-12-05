@@ -13,6 +13,7 @@ class Menu {
 	Sound sound;
 public:
 	static bool singlePlayer;
+	int drawPos;
 	Menu(bool &);
 	Menu() = default;
 	void MenuButtonSetup(sf::RectangleShape& Rect, sf::RenderWindow& target, sf::Vector2f position, bool);

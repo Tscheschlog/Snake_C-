@@ -24,16 +24,18 @@ GameBoard::GameBoard(bool isSinglePlayer, bool &continueGame) {
 	gameBoardWidth = gameBoard.getGlobalBounds().width;
 	gameBoardHeight = gameBoard.getGlobalBounds().height;
 
-	snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor1, isSinglePlayer);
 	apple = new Apple(gameBoard, gameBoardWidth, gameBoardHeight);
 
 
 	if (!isSinglePlayer) {
+		snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor1, isSinglePlayer);
 		snake_2 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor2, !isSinglePlayer);
 		gameDisplay_2P(*gameWindow, continueGame);
 	}
-	else
+	else {
+		snake_1 = new Snake(gameBoard, gameBoardWidth, gameBoardHeight, snakeColor1, !isSinglePlayer);
 		gameDisplay_1P(*gameWindow, continueGame);
+	}
 }
 
 void GameBoard::foundApple(Apple& apple,Snake& snake, char &snakeColor) {

@@ -9,6 +9,7 @@
 
 Menu::Menu(bool &continueGame) { //Setup Menu window  
 	sf::RenderWindow menuWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
+	drawPos = 0;
 	menuWindow.setFramerateLimit(50);
 	Continue(menuWindow, continueGame);
 }
@@ -87,7 +88,8 @@ void Menu::MenuButtonSetup(sf::RectangleShape &Rect, sf::RenderWindow &target, s
 	Rect.setPosition(position);
 }
 
-void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, Buttons
+void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, 
+
 	target.clear(sf::Color::Black);
 	drawTextMenu(target, "SNAKE", .12, 0);
 
