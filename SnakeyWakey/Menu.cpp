@@ -7,10 +7,11 @@
 #include "SFML\System.hpp"
 
 
-Menu::Menu(int fps) { //Setup Menu window  
+Menu::Menu(bool &continueGame) { //Setup Menu window  
 	sf::RenderWindow menuWindow(sf::VideoMode(), "Snake!", sf::Style::Fullscreen);
-	menuWindow.setFramerateLimit(fps);
-	Continue(menuWindow);
+	drawPos = 0;
+	menuWindow.setFramerateLimit(50);
+	Continue(menuWindow, continueGame);
 }
 
 
@@ -25,21 +26,20 @@ void Menu::highlightButton(sf::RectangleShape& Rect, sf::RenderWindow& target) {
 
 }
 
-bool Menu::openGameWindow = true;
 bool Menu::singlePlayer = true;
 
-void Menu::Continue(sf::RenderWindow& target) {
+void Menu::Continue(sf::RenderWindow& target, bool &continueGame) {
 	sound.playMusic("../Music/music.ogg");
 	while (target.isOpen()) {
 
 		sf::Event eventMenu;
 		while (target.pollEvent(eventMenu)) {
 			if (eventMenu.type == sf::Event::Closed) {
-				openGameWindow = false;
+				continueGame = false;
 				target.close();
 			}
 			else if (eventMenu.type == sf::Event::KeyPressed && eventMenu.key.code == sf::Keyboard::Escape) {
-				openGameWindow = false;
+				continueGame = false;
 				target.close();
 			}
 			else if (eventMenu.type == sf::Event::MouseButtonPressed && eventMenu.mouseButton.button == sf::Mouse::Left) { //Checks if users clicks on button
@@ -76,23 +76,28 @@ void Menu::drawTextMenu(sf::RenderWindow& target, sf::String title, float sizeFo
 	target.draw(menuText);
 }
 
-void Menu::MenuButtonSetup(sf::RectangleShape &Rect, sf::RenderWindow &target, sf::Vector2f position) { //Setup Buttons Setting(Color,Position,Size..etc)
-	highlightButton(Rect, target);
+void Menu::MenuButtonSetup(sf::RectangleShape &Rect, sf::RenderWindow &target, sf::Vector2f position, bool ButtonHighlight) { //Setup Buttons Setting(Color,Position,Size..etc)
+	if (ButtonHighlight) {
+		Rect.setOutlineThickness(2);
+		Rect.setOutlineColor(sf::Color::Red);
+		highlightButton(Rect, target);
+	}
+	else
+		Rect.setFillColor(sf::Color::Transparent);
 	Rect.setSize(sf::Vector2f(target.getSize().x * .40, target.getSize().y * .15));
-	Rect.setOutlineThickness(2);
-	Rect.setOutlineColor(sf::Color::Red);
 	Rect.setPosition(position);
 }
 
-void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, Buttons
+void Menu::DrawMenu(sf::RenderWindow& target) { //Draw Menu Text, 
+
 	target.clear(sf::Color::Black);
 	drawTextMenu(target, "SNAKE", .12, 0);
 
-	MenuButtonSetup(buttonSinglePlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 7.10 / 12.0));
+	MenuButtonSetup(buttonSinglePlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 7.10 / 12.0), true);
 	target.draw(buttonSinglePlayer);
 	drawTextMenu(target, "SINGLE", .06, 7.0 / 12.0);
 
-	MenuButtonSetup(buttonMultiPlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0));
+	MenuButtonSetup(buttonMultiPlayer, target, sf::Vector2f(target.getSize().x * 3.625 / 12.0, target.getSize().y * 9.10 / 12.0), true);
 	target.draw(buttonMultiPlayer);
 	drawTextMenu(target, "MULTIPLAYER", .06, 9.0 / 12.0);
 

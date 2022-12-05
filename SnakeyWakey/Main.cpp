@@ -11,20 +11,23 @@
 
 int main() {
 
-    // Create the main menu
-    Menu playerMenu(50);
+    bool continueGame = true; // is true unless you close window with ESC or hit Quit Button
 
-    // Set the random time for apple spawns
+     // Set the random time for apple spawns
     std::srand(time(0));
 
-    
-    if (playerMenu.openGameWindow) {
-        Options optionsMenu;
-        if (playerMenu.singlePlayer && playerMenu.openGameWindow)
-            GameBoard SinglePlayerBoard(playerMenu.singlePlayer);
-        else if(!playerMenu.singlePlayer && playerMenu.openGameWindow)
-            GameBoard MultiplayerBoard(playerMenu.singlePlayer);
-    }
+    do {
+        Menu playerMenu(continueGame);
+
+        if (continueGame) {
+            Options optionsMenu(continueGame);
+            if (playerMenu.singlePlayer && continueGame)
+                GameBoard SinglePlayerBoard(playerMenu.singlePlayer, continueGame);
+            else if (!playerMenu.singlePlayer && continueGame)
+                GameBoard MultiplayerBoard(playerMenu.singlePlayer, continueGame);
+        }
+
+    } while (continueGame);
 
     return 0;
 }

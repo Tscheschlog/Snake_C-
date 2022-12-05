@@ -6,7 +6,7 @@
 #include "SFML\Window.hpp"
 #include "SFML\System.hpp"
 
-class Options: public Apple, Snake, Menu{
+class Options: public Apple, Snake, Menu {
 	friend class GameBoard;
 	friend class Apple;
 private:
@@ -18,8 +18,8 @@ private:
 	static char appleColor, snakeColor1, snakeColor2;
 	static int snakeSpeed;
 public:
-	Options();
-	void OptionsWindow(sf::RenderWindow &Opt); //Makes it so it continues displaying Options Window
+	Options(bool &);
+	void OptionsWindow(sf::RenderWindow &Opt, bool &); //Makes it so it continues displaying Options Window
 	void drawOptionsMenu(sf::RenderWindow& Opt); //Draws all the text and sprites in Options Menu
 	void TextSetup(sf::RenderWindow& Opt, float postionX, float postionY, float size, sf::String stringText); //Setups up Text(size,color,postion..etc)
 	void SnakeColorOption(sf::RenderWindow& Opt, float postionX, float postionY, sf::Vector2f optionSize, char& color, sf::Sprite snakeRight, sf::Sprite snakeLeft, segment& head, segment& body, segment& tail); //Setups up SnakeColorOption(text,arrows..etc)

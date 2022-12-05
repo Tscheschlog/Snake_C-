@@ -27,10 +27,9 @@ Apple::Apple(sf::Sprite Board, float gameBoardX, float gameBoardY) { //Setup App
         }
     }
 
-   
+   // Set size of the apple sprite
     float sizeX = gameBoardX / 60 / float(appleSprite.getLocalBounds().width);
     float sizeY = gameBoardX / 60 / float(appleSprite.getLocalBounds().height);
-
     appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));
 
     // Generate Apple Inside GameBoard

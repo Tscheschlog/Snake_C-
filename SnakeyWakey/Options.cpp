@@ -7,27 +7,31 @@ char Options::snakeColor1 = 'W';
 char Options::snakeColor2 = 'W';
 int Options::snakeSpeed = 1;
 
-Options::Options() {
+Options::Options(bool &continueGame) {
 	sf::RenderWindow OptionsMenu(sf::VideoMode(), "Options!", sf::Style::Fullscreen);
 	OptionsMenu.setFramerateLimit(8);
+	appleColor = 'R'; 
+	snakeColor1 = 'W';
+	snakeColor2 = 'W';
+	snakeSpeed = 1;	
 	arrowLeft.loadFromFile("../Images/LeftArrow.png");
 	arrowRight.loadFromFile("../Images/RightArrow.png");
 	Apple::appleTexture.loadFromFile("../Images/RedApple.png");
 	Apple::appleSprite.setTexture(Apple::appleTexture);
-	OptionsWindow(OptionsMenu);
+	OptionsWindow(OptionsMenu, continueGame);
 }
 
-void Options::OptionsWindow(sf::RenderWindow& Opt) {
+void Options::OptionsWindow(sf::RenderWindow& Opt, bool &continueGame) {
 	while (Opt.isOpen()) {
 		sf::Event optEvent;
 		while (Opt.pollEvent(optEvent)) {
 			if (optEvent.type == sf::Event::KeyPressed && optEvent.key.code == sf::Keyboard::Escape) {
-				Menu::openGameWindow = false;
+				continueGame = false;
 				Opt.close();
 			}
 			else if (optEvent.type == sf::Event::MouseButtonPressed && optEvent.mouseButton.button == sf::Mouse::Left) {
 				if (playButton.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y)) {
-					Menu::openGameWindow = true;
+					continueGame = true;
 					Opt.close();
 				}
 			}
@@ -198,64 +202,64 @@ void Options::AppleColorOption(sf::RenderWindow& Opt, float postionX, float post
 void Options::changeAppleColor(sf::RenderWindow& Opt) {
 	if (ArrowClicked(appleRight, Opt)) { //Right Apple Arrow Clicked
 		switch (appleColor) {
-		case 'R': {
-			appleColor = 'G';
-			Apple::appleTexture.loadFromFile("../Images/GreenApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'G': {
-			appleColor = 'B';
-			Apple::appleTexture.loadFromFile("../Images/BlueApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'B': {
-			appleColor = 'Y';
-			Apple::appleTexture.loadFromFile("../Images/YellowApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'Y': {
-			appleColor = 'R';
-			Apple::appleTexture.loadFromFile("../Images/RedApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-		}
+			case 'R': {
+				appleColor = 'G';
+				Apple::appleTexture.loadFromFile("../Images/GreenApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'G': {
+				appleColor = 'B';
+				Apple::appleTexture.loadFromFile("../Images/BlueApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'B': {
+				appleColor = 'Y';
+				Apple::appleTexture.loadFromFile("../Images/YellowApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'Y': {
+				appleColor = 'R';
+				Apple::appleTexture.loadFromFile("../Images/RedApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+			}
 		}
 	}
 	else if (ArrowClicked(appleLeft, Opt)) { //Left Apple Arrow Clicked
 		switch (appleColor) {
-		case 'R': {
-			appleColor = 'Y';
-			Apple::appleTexture.loadFromFile("../Images/YellowApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'G': {
-			appleColor = 'R';
-			Apple::appleTexture.loadFromFile("../Images/RedApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'B': {
-			appleColor = 'G';
-			Apple::appleTexture.loadFromFile("../Images/GreenApple.png");
-			appleSprite.setTexture(Apple::appleTexture);
-			break;
-		}
-		case 'Y': {
-			appleColor = 'B';
-			Apple::appleTexture.loadFromFile("../Images/BlueApple.png");
-			Apple::appleSprite.setTexture(Apple::appleTexture);
-		}
+			case 'R': {
+				appleColor = 'Y';
+				Apple::appleTexture.loadFromFile("../Images/YellowApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'G': {
+				appleColor = 'R';
+				Apple::appleTexture.loadFromFile("../Images/RedApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'B': {
+				appleColor = 'G';
+				Apple::appleTexture.loadFromFile("../Images/GreenApple.png");
+				appleSprite.setTexture(Apple::appleTexture);
+				break;
+			}
+			case 'Y': {
+				appleColor = 'B';
+				Apple::appleTexture.loadFromFile("../Images/BlueApple.png");
+				Apple::appleSprite.setTexture(Apple::appleTexture);
+			}
 		}
 	}
 
 }
 
 void Options::snakeSpeedOption(sf::RenderWindow& Opt) {
-	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .53, Opt.getSize().y * .4725), true);
-	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .46, Opt.getSize().y * .4725), false);
+	ArrowSetup(Opt, speedRight, sf::Vector2f(Opt.getSize().x * .52, Opt.getSize().y * .535), true);
+	ArrowSetup(Opt, speedLeft, sf::Vector2f(Opt.getSize().x * .4575, Opt.getSize().y * .535), false);
 
 	changeSnakeSpeed(Opt);
 }
@@ -286,10 +290,10 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 		AppleColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(.25f, .25f));
 
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .45f, 0.05, "Snake Speed");
-		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, std::to_string(snakeSpeed));
+		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .55f, 0.05, std::to_string(snakeSpeed));
 		snakeSpeedOption(Opt);
 
-		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
+		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0), true);
 		Opt.draw(playButton);
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
 		highlightButton(playButton, Opt);
@@ -301,16 +305,26 @@ void Options::drawOptionsMenu(sf::RenderWindow& Opt) {
 		SnakeColorOption(Opt, Opt.getSize().x * .23f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor1, snakeRight1, snakeLeft1, player1head, player1body, player1tail);
 
 		TextSetup(Opt, Opt.getSize().x * .75f, Opt.getSize().y * .25f, 0.05, "Player 2");
-		SnakeColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .335f, sf::Vector2f(50.f, 30.f), snakeColor2, snakeRight2, snakeLeft2, player2head, player2body, player2tail);
+		SnakeColorOption(Opt, Opt.getSize().x * .735f, Opt.getSize().y * .35f, sf::Vector2f(50.f, 30.f), snakeColor2, snakeRight2, snakeLeft2, player2head, player2body, player2tail);
 
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .50f, 0.05, "Apple Color");
-		AppleColorOption(Opt, Opt.getSize().x * .485f, Opt.getSize().y * .55f, sf::Vector2f(.25f, .25f));
+		AppleColorOption(Opt, Opt.getSize().x * .485f, Opt.getSize().y * .55f , sf::Vector2f(.25f, .25f));
 
-		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0));
+		MenuButtonSetup(playButton, Opt, sf::Vector2f(Opt.getSize().x * 3.625 / 12.0, Opt.getSize().y * 9.10 / 12.0), true);
 		Opt.draw(playButton);
 		TextSetup(Opt, Opt.getSize().x * .50f, Opt.getSize().y * .80f, 0.09, "Play");
 		highlightButton(playButton, Opt);
 	}
+
+	/*
+	
+	---Set size relative to apple texture selected---
+	
+	float sizeX = Opt.getSize().x / 20 / float(appleSprite.getLocalBounds().width);
+	float sizeY = Opt.getSize().x / 20 / float(appleSprite.getLocalBounds().height);
+	Apple::appleSprite.setScale((sf::Vector2f(sizeX, sizeY)));
+	
+	*/
 
 	Opt.display();
 }

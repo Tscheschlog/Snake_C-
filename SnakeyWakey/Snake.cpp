@@ -24,7 +24,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
         std::cout << "Max columns: " << MAX_X << "\n";
         std::cout << "Max rows: " << MAX_Y << "\n";
 
-        if (isPlayer1) {
+        if (!isPlayer1) {
             head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 - 10);
             head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
             body.xPos = head.xPos - head.shape.getGlobalBounds().width;
@@ -32,7 +32,7 @@ void Snake::initSnakeBody(sf::Sprite board, float gameBoardX, float gameBoardY, 
             tail.xPos = body.xPos - head.shape.getGlobalBounds().width;
             tail.yPos = head.yPos;
         }
-        // Starting Positions of Player 2 Snake
+        // Starting Positions of Player 1 Snake
         else {
             head.xPos = board.getGlobalBounds().left + head.shape.getGlobalBounds().width * int(MAX_X / 2 + 10);
             head.yPos = board.getGlobalBounds().top + head.shape.getGlobalBounds().height * int(MAX_Y / 2 + 1);
@@ -59,7 +59,7 @@ Snake::Snake(sf::Sprite board, float gameBoardX, float gameBoardY, char& snakeCo
         length = 3;
 
         // Starting direction
-        if (isSinglePlayer)
+        if (!isSinglePlayer)
             lastDirection = 2;
         else
             lastDirection = 4;
@@ -131,7 +131,6 @@ void Snake::setLastPostion(int x, int y) {
 
  void Snake::updateSnakeTrail() {
 
-
      for (int i = 1; i < length; i++) {
 
          int temp_x = body[i].xPos;
@@ -187,16 +186,19 @@ void Snake::setLastPostion(int x, int y) {
  bool Snake::wallCollision(sf::Sprite board) {
 
      // Collide with right wall
-     if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width)
+     if (getHeadPos().xPos > board.getGlobalBounds().left + board.getGlobalBounds().width - res)
          return true;
+
      // Collide with left wall
      else if (getHeadPos().xPos < board.getGlobalBounds().left)
          return true;
+
      // Collide with bottom wall
      else if (getHeadPos().yPos > board.getGlobalBounds().top + board.getGlobalBounds().height - getHeadPos().shape.getSize().y)
          return true;
+
      // Collide with top wall
-     else if (getHeadPos().yPos < board.getGlobalBounds().top)
+     else if (getHeadPos().yPos < board.getGlobalBounds().top - res)
          return true;
 
      // No collision with walls
@@ -230,36 +232,37 @@ void Snake::setLastPostion(int x, int y) {
  }
 
  void Snake::movementHandler_P1(sf::Event event) {
-     int last = getLastDirection();
 
-             if (event.key.code == sf::Keyboard::Up) {
-                 // Do not allow down
-                 if (last == 3) 
-                     return;
-                 else
-                    setLastDirection(1);
-             }
-             if (event.key.code == sf::Keyboard::Down) {
-                 // Do not allow up
-                 if (last == 1) 
-                     return;
-                 else
-                    setLastDirection(3);
-             }
-             if (event.key.code == sf::Keyboard::Left) {
-                 // Do not allow right
-                 if (last == 2) 
-                     return;
-                 else
-                    setLastDirection(4);
-             }
-             if (event.key.code == sf::Keyboard::Right) {
-                 // Do not allow left
-                 if (last == 4) 
-                     return;
-                 else
-                    setLastDirection(2);
-             }
+    int last = getLastDirection();
+             
+    if (event.key.code == sf::Keyboard::Up) {
+        // Do not allow down
+        if (last == 3) 
+            return;
+        else
+        setLastDirection(1);
+    }
+    if (event.key.code == sf::Keyboard::Down) {
+        // Do not allow up
+        if (last == 1) 
+            return;
+        else
+        setLastDirection(3);
+    }
+    if (event.key.code == sf::Keyboard::Left) {
+        // Do not allow right
+        if (last == 2) 
+            return;
+        else
+        setLastDirection(4);
+    }
+    if (event.key.code == sf::Keyboard::Right) {
+        // Do not allow left
+        if (last == 4) 
+            return;
+        else
+        setLastDirection(2);
+    }
  }
 
  void Snake::movementHandler_P2(sf::Event event) {
